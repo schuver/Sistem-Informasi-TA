@@ -25,9 +25,9 @@
         <!-- Begin page -->
         <!-- <div class="accountbg" style="background: url('<?php echo base_url(); ?>layout/login/assets/images/bg-2.jpg');background-size: cover;"></div> -->
         <div class="accountbg" style="background: #3498db;">
-            <div class="col-md-7 text-center">
+            <!-- <div class="col-md-7 text-center">
                 <h2>LOGO</h2>
-            </div>
+            </div> -->
         </div>
 
         <div class="wrapper-page account-page-full">
@@ -45,6 +45,7 @@
                             </h2> -->
 
                             <form class="form-horizontal" action="<?php echo base_url('register/simpan'); ?>" method="post">
+                                <?php echo $this ->session ->flashdata('msg'); ?>
 
                                 <div class="form-group row m-b-20">
                                     <div class="col-12">

@@ -40,19 +40,19 @@
                             </h2>
 
                             <form method="post" class="" action="<?php echo base_url('login/prosesLogin'); ?>">
-
+                                <?php echo $this ->session ->flashdata('msg'); ?>
                                 <div class="form-group m-b-20 row">
                                     <div class="col-12">
-                                        <label for="emailaddress">Username</label>
-                                        <input class="form-control" type="text" name="username" id="emailaddress"  placeholder="Enter your email">
+                                        <label for="username">Username</label>
+                                        <input class="form-control" type="text" name="username" id="username"  placeholder="Masukkan username anda" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row m-b-20">
                                     <div class="col-12">
-                                        <a href="page-recoverpw.html" class="text-muted pull-right"><small>Forgot your password?</small></a>
+                                        <a href="#" class="text-muted pull-right"><small>Lupa Password ?</small></a>
                                         <label for="password">Password</label>
-                                        <input class="form-control" type="password" name="password" required="" id="password" placeholder="Enter your password">
+                                        <input class="form-control" type="password" name="password" required id="password" placeholder="Masukkan password anda">
                                     </div>
                                 </div>
 
@@ -71,7 +71,7 @@
 
                                 <div class="form-group row text-center m-t-10">
                                     <div class="col-12">
-                                        <button name="btn-login" class="btn btn-block btn-custom waves-effect waves-light" type="submit">Sign In</button>
+                                        <button name="btn-login" class="btn btn-block btn-custom waves-effect waves-light" type="submit">Masuk</button>
                                     </div>
                                 </div>
 
@@ -79,7 +79,7 @@
 
                             <div class="row m-t-50">
                                 <div class="col-sm-12 text-center">
-                                    <p class="text-muted">Don't have an account? <a href="<?php echo base_url('register'); ?>" class="text-dark m-l-5"><b>Sign Up</b></a></p>
+                                    <p class="text-muted">Belum punya mendaftar ? <a href="<?php echo base_url('register'); ?>" class="text-dark m-l-5"><b>Daftar disini</b></a></p>
                                 </div>
                             </div>
 
@@ -90,7 +90,7 @@
             </div>
 
             <div class="m-t-40 text-center">
-                <p class="account-copyright">2018 © Highdmin. - Coderthemes.com</p>
+                <p class="account-copyright">2018 © Manajemen Informatika</p>
             </div>
 
         </div>
