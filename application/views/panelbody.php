@@ -10,6 +10,7 @@
 
         <!-- App favicon -->
         <link rel="shortcut icon" href="<?php echo base_url(); ?>layout/assets/images/favicon.ico">
+        <link href="<?php echo base_url(); ?>layout/assets/plugins/footable/css/footable.core.css" rel="stylesheet">
 
         <!-- C3 charts css -->
         <link href="<?php echo base_url(); ?>layout/assets/plugins/c3/c3.min.css" rel="stylesheet" type="text/css"  />
@@ -72,7 +73,7 @@
                                     <a href=""><i class="fa fa-search"></i></a>
                                 </form>
                             </li>
-                            <?php echo base_url();?>
+                            <!-- <?php echo base_url();?> -->
                             <li>
                                 <a href="#" class="right-menu-item dropdown-toggle" data-toggle="dropdown">
                                     <i class="dripicons-bell"></i>
@@ -187,7 +188,7 @@
                                     <li><a href="javascript:void(0)"><span class="badge badge-info pull-right">4</span>Settings</a></li>
                                     <li><a href="javascript:void(0)">Lock screen</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="javascript:void(0)">Logout</a></li>
+                                    <li><a href="<?php echo base_url('login/logout')?>">Logout</a></li>
                                 </ul>
                             </li>
 
@@ -241,345 +242,14 @@
                             </div>
                         </div>
                         <!-- end row -->
-
-                        <div class="row">
-
-                            <div class="col-lg-3 col-md-6">
-                                <div class="card-box widget-box-two widget-two-custom">
-                                    <i class="mdi mdi-currency-usd widget-two-icon"></i>
-                                    <div class="wigdet-two-content">
-                                        <p class="m-0 text-uppercase font-bold font-secondary text-overflow" title="Statistics">Total Revenue</p>
-                                        <h2 class=""><span><i class="mdi mdi-arrow-up"></i></span> <span data-plugin="counterup">65841</span></h2>
-                                        <p class="m-0">Jan - Apr 2017</p>
-                                    </div>
-                                </div>
-                            </div><!-- end col -->
-
-                            <div class="col-lg-3 col-md-6">
-                                <div class="card-box widget-box-two widget-two-custom">
-                                    <i class="mdi mdi-account-multiple widget-two-icon"></i>
-                                    <div class="wigdet-two-content">
-                                        <p class="m-0 text-uppercase font-bold font-secondary text-overflow" title="Statistics">Total Unique Visitors</p>
-                                        <h2 class=""><span><i class="mdi mdi-arrow-up"></i></span> <span data-plugin="counterup">236521</span></h2>
-                                        <p class="m-0">Jan - Apr 2017</p>
-                                    </div>
-                                </div>
-                            </div><!-- end col -->
-
-                            <div class="col-lg-3 col-md-6">
-                                <div class="card-box widget-box-two widget-two-custom">
-                                    <i class="mdi mdi-crown widget-two-icon"></i>
-                                    <div class="wigdet-two-content">
-                                        <p class="m-0 text-uppercase font-bold font-secondary text-overflow" title="Statistics">Number of Transactions</p>
-                                        <h2 class=""><span><i class="mdi mdi-arrow-up"></i></span> <span data-plugin="counterup">563698</span></h2>
-                                        <p class="m-0">Jan - Apr 2017</p>
-                                    </div>
-                                </div>
-                            </div><!-- end col -->
-
-                            <div class="col-lg-3 col-md-6">
-                                <div class="card-box widget-box-two widget-two-custom">
-                                    <i class="mdi mdi-auto-fix widget-two-icon"></i>
-                                    <div class="wigdet-two-content">
-                                        <p class="m-0 text-uppercase font-bold font-secondary text-overflow" title="Statistics">Conversation Rate</p>
-                                        <h2 class=""><span><i class="mdi mdi-arrow-up"></i></span> <span data-plugin="counterup">2.07</span>%</h2>
-                                        <p class="m-0">Jan - Apr 2017</p>
-                                    </div>
-                                </div>
-                            </div><!-- end col -->
-
-                        </div>
-                        <!-- end row -->
-
-
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="card-box">
-                                    <h4 class="header-title m-t-0 m-b-30">Revenue Comparison</h4>
-
-                                    <div class="text-center">
-                                        <h5 class="font-normal text-muted">You have to pay</h5>
-                                        <h3 class="m-b-30"><i class="mdi mdi-arrow-up-bold-hexagon-outline text-success"></i> 25643 <small>USD</small></h3>
-                                    </div>
-
-                                    <div class="chart-container">
-                                        <div class="" style="height:280px" id="platform_type_dates_donut"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4">
-                                <div class="card-box">
-                                    <h4 class="header-title m-t-0 m-b-30">Visitors Overview</h4>
-
-                                    <div class="text-center">
-                                        <h5 class="font-normal text-muted">You have to pay</h5>
-                                        <h3 class="m-b-30"><i class="mdi mdi-arrow-down-bold-hexagon-outline text-danger"></i> 5623 <small>USD</small></h3>
-                                    </div>
-
-                                    <div class="chart-container">
-                                        <div class="" style="height:280px" id="user_type_bar"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4">
-                                <div class="card-box">
-                                    <h4 class="header-title m-t-0 m-b-30">Goal Completion</h4>
-
-                                    <div class="text-center">
-                                        <h5 class="font-normal text-muted">You have to pay</h5>
-                                        <h3 class="m-b-30"><i class="mdi mdi-arrow-up-bold-hexagon-outline text-success"></i> 12548 <small>USD</small></h3>
-                                    </div>
-
-                                    <div class="chart-container">
-                                        <div class="chart has-fixed-height" style="height:280px" id="page_views_today"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end row -->
-
-
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="card-box">
-                                    <h4 class="m-t-0 header-title"><b>Recent Candidates</b></h4>
-                                    <p class="text-muted font-14 m-b-20">
-                                        Your awesome text goes here.
-                                    </p>
-
-                                    <div class="table-responsive">
-                                        <table class="table table-hover m-0 mails table-actions-bar">
-
-                                            <thead>
-                                            <tr>
-                                                <th>
-                                                    <div class="btn-group dropdown">
-                                                        <button type="button" class="btn btn-default btn-xs dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="false"><i class="caret"></i></button>
-                                                        <ul class="dropdown-menu" role="menu">
-                                                            <li><a href="#">Action</a></li>
-                                                            <li><a href="#">Another action</a></li>
-                                                            <li><a href="#">Something else here</a></li>
-                                                            <li class="divider"></li>
-                                                            <li><a href="#">Separated link</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </th>
-                                                <th>Name</th>
-                                                <th>Location</th>
-                                                <th>Job Timing</th>
-                                                <th>Salary</th>
-                                                <th>Action</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td>
-
-                                                    <img src="<?php echo base_url(); ?>layout/assets/images/users/avatar-2.jpg" alt="contact-img" title="contact-img" class="img-circle thumb-sm" />
-                                                </td>
-
-                                                <td>
-                                                    <h5 class="m-b-0 m-t-0">Tomaslau</h5>
-                                                    <p class="m-b-0"><small>Web Designer</small></p>
-                                                </td>
-
-                                                <td>
-                                                    <i class="mdi mdi-map-marker text-primary"></i> New York
-                                                </td>
-
-                                                <td>
-                                                    <i class="mdi mdi-clock text-success"></i> Full Time
-                                                </td>
-
-                                                <td>
-                                                    <i class="mdi mdi-currency-usd text-warning"></i> 3265
-                                                </td>
-
-                                                <td>
-                                                    <a href="#" class="table-action-btn"><i class="mdi mdi-pencil"></i></a>
-                                                    <a href="#" class="table-action-btn"><i class="mdi mdi-close"></i></a>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>
-                                                    <img src="<?php echo base_url(); ?>layout/assets/images/users/avatar-3.jpg" alt="contact-img" title="contact-img" class="img-circle thumb-sm" />
-                                                </td>
-
-                                                <td>
-                                                    <h5 class="m-b-0 m-t-0">Erwin E. Brown</h5>
-                                                    <p class="m-b-0"><small>Programmer</small></p>
-                                                </td>
-
-                                                <td>
-                                                    <i class="mdi mdi-map-marker text-primary"></i> California
-                                                </td>
-
-                                                <td>
-                                                    <i class="mdi mdi-clock text-success"></i> Part Time
-                                                </td>
-
-                                                <td>
-                                                    <i class="mdi mdi-currency-usd text-warning"></i> 1365
-                                                </td>
-
-                                                <td>
-                                                    <a href="#" class="table-action-btn"><i class="mdi mdi-pencil"></i></a>
-                                                    <a href="#" class="table-action-btn"><i class="mdi mdi-close"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <img src="<?php echo base_url(); ?>layout/assets/images/users/avatar-4.jpg" alt="contact-img" title="contact-img" class="img-circle thumb-sm" />
-                                                </td>
-
-                                                <td>
-                                                    <h5 class="m-b-0 m-t-0">Margeret V. Ligon</h5>
-                                                    <p class="m-b-0"><small>Web Designer</small></p>
-                                                </td>
-
-                                                <td>
-                                                    <i class="mdi mdi-map-marker text-primary"></i> New York
-                                                </td>
-
-                                                <td>
-                                                    <i class="mdi mdi-clock text-success"></i> Full Time
-                                                </td>
-
-                                                <td>
-                                                    <i class="mdi mdi-currency-usd text-warning"></i> 115248
-                                                </td>
-
-                                                <td>
-                                                    <a href="#" class="table-action-btn"><i class="mdi mdi-pencil"></i></a>
-                                                    <a href="#" class="table-action-btn"><i class="mdi mdi-close"></i></a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <img src="<?php echo base_url(); ?>layout/assets/images/users/avatar-5.jpg" alt="contact-img" title="contact-img" class="img-circle thumb-sm" />
-                                                </td>
-
-                                                <td>
-                                                    <h5 class="m-b-0 m-t-0">Jose D. Delacruz</h5>
-                                                    <p class="m-b-0"><small>Web Developer</small></p>
-                                                </td>
-
-                                                <td>
-                                                    <i class="mdi mdi-map-marker text-primary"></i> New York
-                                                </td>
-
-                                                <td>
-                                                    <i class="mdi mdi-clock text-success"></i> Part Time
-                                                </td>
-
-                                                <td>
-                                                    <i class="mdi mdi-currency-usd text-warning"></i> 2451
-                                                </td>
-
-                                                <td>
-                                                    <a href="#" class="table-action-btn"><i class="mdi mdi-pencil"></i></a>
-                                                    <a href="#" class="table-action-btn"><i class="mdi mdi-close"></i></a>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>
-                                                    <img src="<?php echo base_url(); ?>layout/assets/images/users/avatar-8.jpg" alt="contact-img" title="contact-img" class="img-circle thumb-sm" />
-                                                </td>
-
-                                                <td>
-                                                    <h5 class="m-b-0 m-t-0">Luke J. Sain</h5>
-                                                    <p class="m-b-0"><small>Web Designer</small></p>
-                                                </td>
-
-                                                <td>
-                                                    <i class="mdi mdi-map-marker text-primary"></i> Australia
-                                                </td>
-
-                                                <td>
-                                                    <i class="mdi mdi-clock text-success"></i> Part Time
-                                                </td>
-
-                                                <td>
-                                                    <i class="mdi mdi-currency-usd text-warning"></i> 3265
-                                                </td>
-
-                                                <td>
-                                                    <a href="#" class="table-action-btn"><i class="mdi mdi-pencil"></i></a>
-                                                    <a href="#" class="table-action-btn"><i class="mdi mdi-close"></i></a>
-                                                </td>
-                                            </tr>
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!-- end col -->
-
-                            <div class="col-lg-3">
-                                <div class="card-box">
-                                    <h4 class="text-dark header-title m-t-0 m-b-30">Total Unique Visitors</h4>
-
-                                    <div class="widget-chart text-center">
-
-                                        <div id="donut-chart" style="height: 270px;"></div>
-
-                                        <div class="row text-center m-t-30">
-                                            <div class="col-xs-6">
-                                                <h3 data-plugin="counterup">1,507</h3>
-                                                <p class="text-muted">Visitors Male</p>
-                                            </div>
-                                            <div class="col-xs-6">
-                                                <h3 data-plugin="counterup">854</h3>
-                                                <p class="text-muted">Visitors Female</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                            <div class="col-lg-3">
-                                <div class="card-box">
-                                    <h4 class="text-dark header-title m-t-0 m-b-30">Number of Transactions</h4>
-
-                                    <div class="widget-chart text-center">
-
-                                        <div id="pie-chart" style="height: 270px;"></div>
-
-                                        <div class="row text-center m-t-30">
-                                            <div class="col-xs-6">
-                                                <h3 data-plugin="counterup">2,854</h3>
-                                                <p class="text-muted">Payment Done</p>
-                                            </div>
-                                            <div class="col-xs-6">
-                                                <h3 data-plugin="counterup">22</h3>
-                                                <p class="text-muted">Payment Due</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <!--- end row -->
-
-
-
+                        <?php $this ->load ->view($panelbody); ?>
 
                     </div> <!-- container -->
 
                 </div> <!-- content -->
 
                 <footer class="footer text-right">
-                    2017 © Adminox. - Coderthemes.com
+                    2018 &copy; Manajemen Informatika
                 </footer>
 
             </div>
@@ -619,6 +289,11 @@
         <!-- App js -->
         <script src="<?php echo base_url(); ?>layout/assets/js/jquery.core.js"></script>
         <script src="<?php echo base_url(); ?>layout/assets/js/jquery.app.js"></script>
+        <!--FooTable-->
+        <script src="<?php echo base_url(); ?>layout/assetsplugins/footable/js/footable.all.min.js"></script>
+
+        <!--FooTable Example-->
+        <script src="<?php echo base_url(); ?>layout/assets/pages/jquery.footable.js"></script>
 
     </body>
 </html>
