@@ -12,8 +12,9 @@
         <link rel="shortcut icon" href="<?php echo base_url(); ?>layout/assets/images/favicon.ico">
         <link href="<?php echo base_url(); ?>layout/assets/plugins/footable/css/footable.core.css" rel="stylesheet">
 
-        <!-- C3 charts css -->
-        <link href="<?php echo base_url(); ?>layout/assets/plugins/c3/c3.min.css" rel="stylesheet" type="text/css"  />
+        <link href="<?php echo base_url(); ?>layout/assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo base_url(); ?>layout/assets/plugins/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo base_url(); ?>layout/assets/plugins/datatables/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css"/>
 
         <!-- App css -->
         <link href="<?php echo base_url(); ?>layout/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -272,16 +273,15 @@
         <script src="<?php echo base_url(); ?>layout/assets/js/waves.js"></script>
         <script src="<?php echo base_url(); ?>layout/assets/js/jquery.slimscroll.js"></script>
 
-        <!-- Counter js  -->
-        <script src="<?php echo base_url(); ?>layout/assets/plugins/waypoints/jquery.waypoints.min.js"></script>
-        <script src="<?php echo base_url(); ?>layout/assets/plugins/counterup/jquery.counterup.min.js"></script>
+        <script src="<?php echo base_url(); ?>layout/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="<?php echo base_url(); ?>layout/assets/plugins/datatables/dataTables.bootstrap.js"></script>
+        <script src="<?php echo base_url(); ?>layout/assets/plugins/datatables/jszip.min.js"></script>
+        <script src="<?php echo base_url(); ?>layout/assets/plugins/datatables/dataTables.fixedHeader.min.js"></script>
+        <script src="<?php echo base_url(); ?>layout/assets/plugins/datatables/responsive.bootstrap.min.js"></script>
+        <script src="<?php echo base_url(); ?>layout/assets/plugins/datatables/dataTables.fixedColumns.min.js"></script>
 
-        <!--C3 Chart-->
-        <script type="text/javascript" src="<?php echo base_url(); ?>layout/assets/plugins/d3/d3.min.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>layout/assets/plugins/c3/c3.min.js"></script>
-
-        <!--Echart Chart-->
-        <script src="<?php echo base_url(); ?>layout/assets/plugins/echart/echarts-all.js"></script>
+        <!-- init -->
+        <script src="<?php echo base_url(); ?>layout/assets/pages/jquery.datatables.init.js"></script>
 
         <!-- Dashboard init -->
         <script src="<?php echo base_url(); ?>layout/assets/pages/jquery.dashboard.js"></script>
@@ -289,6 +289,41 @@
         <!-- App js -->
         <script src="<?php echo base_url(); ?>layout/assets/js/jquery.core.js"></script>
         <script src="<?php echo base_url(); ?>layout/assets/js/jquery.app.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#datatable').dataTable();
+                $('#datatable-keytable').DataTable({keys: true});
+                $('#datatable-responsive').DataTable();
+                $('#datatable-colvid').DataTable({
+                    "dom": 'C<"clear">lfrtip',
+                    "colVis": {
+                        "buttonText": "Change columns"
+                    }
+                });
+                $('#datatable-scroller').DataTable({
+                    ajax: "<?php echo base_url(); ?>layout/assets/plugins/datatables/json/scroller-demo.json",
+                    deferRender: true,
+                    scrollY: 380,
+                    scrollCollapse: true,
+                    scroller: true
+                });
+                var table = $('#datatable-fixed-header').DataTable({fixedHeader: true});
+                var table = $('#datatable-fixed-col').DataTable({
+                    scrollY: "300px",
+                    scrollX: true,
+                    scrollCollapse: true,
+                    paging: false,
+                    fixedColumns: {
+                        leftColumns: 1,
+                        rightColumns: 1
+                    }
+                });
+            });
+            TableManageButtons.init();
+
+        </script>
+
         <!--FooTable-->
         <script src="<?php echo base_url(); ?>layout/assetsplugins/footable/js/footable.all.min.js"></script>
 
