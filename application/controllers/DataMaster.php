@@ -26,7 +26,7 @@ Class DataMaster extends CI_Controller{
 			$dataUser = array(
     		'tmst_dosen_nip' => $this ->input ->post('nip'),
     		'password' => $this ->input ->post('nip'),
-    		'level' => '1');
+    		'level' => '3');
     	$this ->db ->insert("tmst_dosen",$datados);
     	$this ->db ->insert("tmst_user",$dataUser);
 				
