@@ -72,19 +72,6 @@ CREATE TABLE `tmst_dosen` (
 -- Dumping data untuk tabel `tmst_dosen`
 --
 
-INSERT INTO `tmst_dosen` (`nip`, `nama`, `no_hp`, `kuota`, `tmst_prodi_id`) VALUES
-('197104082001121003', 'Wahyu Kurnia Dewanto, S.Kom., M.T.', '081 252 449 69', NULL, 0),
-('197111151998021001', 'Adi Heru Utomo, S.Kom., M.Kom.', '085236010820', NULL, 0),
-('197709292005011003', 'Didit Rahmat Hartadi S.Kom., M.T.', '085 234 609 168', NULL, 0),
-('197808192005022001', 'Ika Widiastuti, S.ST., M.T.', '081 249 794 912', NULL, 0),
-('198005172008121002', 'Dwi Putro Sarwo S, S.Kom., M.Kom.', '085 641 500 007', NULL, 0),
-('198106152006041002', 'Syamsul Arifin, S.Kom., M.Cs.', '081 249 515 151', NULL, 0),
-('198301092018031001', 'Hermawan Arief Putranto, S.T., M.T.', '081 252 465 655', NULL, 0),
-('198302032006041003', 'Hendra Yufit Riskiawan, S.Kom., M.Cs.', '085 649 222 290', NULL, 0),
-('198606092008122004', 'Nanik Anita M. ,S.ST.,M.T.', '081234909509', NULL, 0),
-('198807022016101001', 'Husin, S.Kom., M.MT.', '081 338 338 833', NULL, 0),
-('198903292015031001', 'Taufiq Rizaldi, S.ST.,M.T.', '081 332 010 455', NULL, 0),
-('199104292017101001', 'Faisal Lutfi Afriansyah, S.Kom., M.T.', '081 136 205 000', NULL, 0);
 
 -- --------------------------------------------------------
 
