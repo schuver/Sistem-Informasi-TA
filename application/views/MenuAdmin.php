@@ -14,13 +14,10 @@
                                     <a href="<?php echo base_url(); ?>koordinator"><i class="fa fa-home"></i><span> Beranda</span></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-list"></i> <span> List Mahasiswa</span></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-list"></i> <span> Bimbingan</span></a>
-                                </li>
-                                <li>
                                     <a href="<?php echo base_url('koordinator/privileges')?>"><i class="fa fa-lock"></i> <span> Privileges</span></a>
+                                </li>
+                                 <li>
+                                    <a href="<?php echo base_url('koordinator/tampildos')?>"><i class="fa fa-lock"></i> <span> Edit Kuota</span></a>
                                 </li>
                                 <li>
                                     <a href="javascript: void(0);" aria-expanded="true"><i class="fa fa-lock"></i> <span> Grafik<span> <span class="menu-arrow"></span></a>
