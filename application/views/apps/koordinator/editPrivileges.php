@@ -1,6 +1,6 @@
 <?php 
 echo form_open('koordinator/update','class="form-horizontal" role="form"');
-echo form_hidden('id', $this->uri->segment(3));
+echo form_hidden('nip', $user['nip']);
 
 ?>
 <div class="row">

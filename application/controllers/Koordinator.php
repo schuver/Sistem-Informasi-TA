@@ -23,92 +23,53 @@ Class Koordinator extends CI_Controller{
 
     public function privileges(){
     	$id = $this ->session ->userdata('id_session');
-    	$list = $this ->ModelKoordinator ->get_user();
-    	$prodi = $this ->ModelKoordinator ->get_prodi($id);
+    	$list = $this ->ModelKoordinator ->get_user()->result();
+    	// $prodi = $this ->ModelKoordinator ->get_prodi_id($id);
     	$data = array(
     		'menu' => 'MenuAdmin',
     		'panelbody' => 'apps/koordinator/list',
-    		'list' => $list,
-    		'prodi' => $prodi
+    		'list' => $list
+    		// 'prodi' => $prodi
     	);
     	$this ->load ->view('panelbody',$data);
     }
 
-    public function edit(){
-        $id = $this->uri->segment(3);
-        $user = $this->ModelKoordinator->get_user();
-        $prodi = $this ->ModelKoordinator ->get_prodi();
-        $privileges = $this->ModelKoordinator->get_privileges($id)->row_array();
-        $data = array(
-            "menu" => "MenuAdmin",
-            "panelbody" => "apps/koordinator/editPrivileges",
-            "formPrivileges" => "apps/koordinator/formPrivileges",
-            "privileges" => $privileges,
-            "user" => $user,
-            "prodi" => $prodi
-            // "visi" => $visi
-        );
-        $this->load->view('panelbody', $data);
-    }
-
-    public function update(){
-        $id = $this ->input ->post('id');
-        // $id = $this ->uri->segment(3);
-        $data = array(
-            'level' => $this ->input ->post('level'));
-        $this ->db ->where('id',$id);
-        $this ->db ->update('tmst_user',$data);
-        redirect('koordinator/privileges');
-    }
-
-    /*---------------------------------------------------------------------------------------------------------------------*/
-
-    public function editkuota(){
-        /*$this ->load->model('ModelKoordinator');
+     public function tampildos(){
+        $this ->load->model('ModelKoordinator');
         $dosen = $this->ModelKoordinator->get_datados()->result();
         $data = array(   
             'menu' => 'MenuAdmin',
             'panelbody' => 'apps/koordinator/EditKuotaDos',
             'dosen' => $dosen
         );
-        $this ->load ->view('panelbody',$data);*/
-        $id = $this ->session ->userdata('id_session');
-        $list = $this ->ModelKoordinator ->get_user();
-        $prodi = $this ->ModelKoordinator ->get_prodi($id);
-        $data = array(
-            'menu' => 'MenuAdmin',
-            'panelbody' => 'apps/koordinator/EditKuotaDos',
-            'list' => $list,
-            'prodi' => $prodi
-        );
         $this ->load ->view('panelbody',$data);
     }
 
-     public function tampildiformkuota(){
-            $id = $this->uri->segment(3);
-            $list = $this->ModelKoordinator->get_nip($id)->row_array();
-            $prodi = $this ->ModelKoordinator ->get_prodi($id);
-            $data = array(
+    public function edit(){
+        $id = $this->uri->segment(3);
+        $user = $this->ModelKoordinator->get_user_id($id)->row_array();
+        // $prodi = $this ->ModelKoordinator ->get_prodi_id($id);
+        $privileges = $this->ModelKoordinator->get_privileges($id)->row_array();
+        $data = array(
             "menu" => "MenuAdmin",
-            "panelbody" => "apps/koordinator/editkuota",
-            "formKuota" => "apps/koordinator/formKuota",
-            "list" => $list,
-            "prodi"=> $prodi
-            //"user" => $user,
-            //"prodi" => $prodi
-            // "visi" => $visi
+            "panelbody" => "apps/koordinator/editPrivileges",
+            "formPrivileges" => "apps/koordinator/formPrivileges",
+            "privileges" => $privileges,
+            "user" => $user
+            // "prodi" => $prodi
         );
-             $this->load->view('panelbody', $data);
+        $this->load->view('panelbody', $data);
     }
 
-     public function simpan_kuota(){
-        $id = $this->input->post('nip');
+    public function update(){
+        // $id = $this ->input ->post('id');
+        $id = $this ->input->post('nip');
         $data = array(
-            'kuota'=> $this->input->post('kuota')
-        );
-        $this->db->where('nip', $id);
-        $this->db->update('tmst_dosen', $data);
-        redirect('koordinator/editkuota');
+            'level' => $this ->input ->post('level'));
+        $this ->db ->where('tmst_dosen_nip',$id);
+        $this ->db ->update('tmst_user',$data);
 
+        // echo var_dump($data,$id);
+        redirect('koordinator/privileges');
     }
 }
