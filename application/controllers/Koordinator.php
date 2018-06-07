@@ -72,4 +72,55 @@ Class Koordinator extends CI_Controller{
         // echo var_dump($data,$id);
         redirect('koordinator/privileges');
     }
+
+    /*---------------------------------------------------------------------------------------------------------------------*/
+
+    public function editkuota(){
+        /*$this ->load->model('ModelKoordinator');
+        $dosen = $this->ModelKoordinator->get_datados()->result();
+        $data = array(   
+            'menu' => 'MenuAdmin',
+            'panelbody' => 'apps/koordinator/EditKuotaDos',
+            'dosen' => $dosen
+        );
+        $this ->load ->view('panelbody',$data);*/
+        $id = $this ->session ->userdata('id_session');
+        $list = $this ->ModelKoordinator ->get_user()->result();
+        $prodi = $this ->ModelKoordinator ->get_prodi($id);
+        $data = array(
+            'menu' => 'MenuAdmin',
+            'panelbody' => 'apps/koordinator/EditKuotaDos',
+            'list' => $list,
+            'prodi' => $prodi
+        );
+        $this ->load ->view('panelbody',$data);
+    }
+
+     public function tampildiformkuota(){
+            $id = $this->uri->segment(3);
+            $list = $this->ModelKoordinator->get_nip($id)->row_array();
+            $prodi = $this ->ModelKoordinator ->get_prodi($id);
+            $data = array(
+            "menu" => "MenuAdmin",
+            "panelbody" => "apps/koordinator/editkuota",
+            "formKuota" => "apps/koordinator/formKuota",
+            "list" => $list,
+            "prodi"=> $prodi
+            //"user" => $user,
+            //"prodi" => $prodi
+            // "visi" => $visi
+        );
+             $this->load->view('panelbody', $data);
+    }
+
+     public function simpan_kuota(){
+        $id = $this->input->post('nip');
+        $data = array(
+            'kuota'=> $this->input->post('kuota')
+        );
+        $this->db->where('nip', $id);
+        $this->db->update('tmst_dosen', $data);
+        redirect('koordinator/editkuota');
+
+    }
 }
