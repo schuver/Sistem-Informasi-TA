@@ -29,7 +29,7 @@ class ModelLogin extends CI_Model{
 
 	public function get_pass_dosen($user){
 
-		$this ->db ->select('*');
+		$this ->db ->select('password');
 		$this ->db ->from('tmst_user');
 		$this ->db ->where('tmst_dosen_nip',$user);
 
@@ -40,7 +40,7 @@ class ModelLogin extends CI_Model{
 
 	public function get_pass_mhs($user){
 
-		$this ->db ->select('*');
+		$this ->db ->select('password');
 		$this ->db ->from('tmst_user');
 		$this ->db ->where('tmst_mahasiswa_nim',$user);
 

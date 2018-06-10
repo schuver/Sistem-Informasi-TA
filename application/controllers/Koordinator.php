@@ -24,12 +24,10 @@ Class Koordinator extends CI_Controller{
     public function privileges(){
     	$id = $this ->session ->userdata('id_session');
     	$list = $this ->ModelKoordinator ->get_user()->result();
-    	// $prodi = $this ->ModelKoordinator ->get_prodi_id($id);
     	$data = array(
     		'menu' => 'MenuAdmin',
     		'panelbody' => 'apps/koordinator/list',
     		'list' => $list
-    		// 'prodi' => $prodi
     	);
     	$this ->load ->view('panelbody',$data);
     }
@@ -45,10 +43,9 @@ Class Koordinator extends CI_Controller{
         $this ->load ->view('panelbody',$data);
     }
 
-    public function edit(){
+    public function editPrivileges(){
         $id = $this->uri->segment(3);
         $user = $this->ModelKoordinator->get_user_id($id)->row_array();
-        // $prodi = $this ->ModelKoordinator ->get_prodi_id($id);
         $privileges = $this->ModelKoordinator->get_privileges($id)->row_array();
         $data = array(
             "menu" => "MenuAdmin",
@@ -56,20 +53,17 @@ Class Koordinator extends CI_Controller{
             "formPrivileges" => "apps/koordinator/formPrivileges",
             "privileges" => $privileges,
             "user" => $user
-            // "prodi" => $prodi
         );
         $this->load->view('panelbody', $data);
     }
 
-    public function update(){
-        // $id = $this ->input ->post('id');
+    public function updatePrivileges(){
         $id = $this ->input->post('nip');
         $data = array(
             'level' => $this ->input ->post('level'));
         $this ->db ->where('tmst_dosen_nip',$id);
         $this ->db ->update('tmst_user',$data);
 
-        // echo var_dump($data,$id);
         redirect('koordinator/privileges');
     }
 }

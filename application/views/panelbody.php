@@ -42,7 +42,7 @@
                 <div class="topbar-left">
                     <!--<a href="index.html" class="logo"><span>Code<span>Fox</span></span><i class="mdi mdi-layers"></i></a>-->
                     <!-- Image logo -->
-                    <a href="index.html" class="logo">
+                    <a class="logo">
                         <span>
                             <img src="<?php echo base_url(); ?>layout/assets/images/logo.png" alt="" height="25">
                         </span>
@@ -67,14 +67,13 @@
 
                         <!-- Right(Notification) -->
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="hidden-xs">
+                            <!-- <li class="hidden-xs">
                                 <form role="search" class="app-search">
                                     <input type="text" placeholder="Search..."
                                            class="form-control">
                                     <a href=""><i class="fa fa-search"></i></a>
                                 </form>
-                            </li>
-                            <!-- <?php echo base_url();?> -->
+                            </li> -->
                             <li>
                                 <a href="#" class="right-menu-item dropdown-toggle" data-toggle="dropdown">
                                     <i class="dripicons-bell"></i>
@@ -180,14 +179,13 @@
                             </li>
 
                             <li class="dropdown user-box">
-                                <a href="" class="dropdown-toggle waves-effect user-link" data-toggle="dropdown" aria-expanded="true">
-                                    <img src="<?php echo base_url(); ?>layout/assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle user-img">
+                                <a href="#" class="right-menu-item dropdown-toggle" data-toggle="dropdown">
+                                    <i class="dripicons-user"></i>
                                 </a>
 
                                 <ul class="dropdown-menu dropdown-menu-right arrow-dropdown-menu arrow-menu-right user-list notify-list">
-                                    <li><a href="javascript:void(0)">Profile</a></li>
-                                    <li><a href="javascript:void(0)"><span class="badge badge-info pull-right">4</span>Settings</a></li>
-                                    <li><a href="javascript:void(0)">Lock screen</a></li>
+                                    <li style="margin-top: 10px; margin-left: 10px;">Selamat Datang ! <br><?php echo $this->session->userdata('id_session');?>
+                                  </li>
                                     <li class="divider"></li>
                                     <li><a href="<?php echo base_url('login/logout')?>">Logout</a></li>
                                 </ul>
