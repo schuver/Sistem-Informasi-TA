@@ -22,10 +22,10 @@ class ModelKoordinator extends CI_Model{
         return $this->db->get();
 	}
 
-	public function get_datados(){
+	/*public function get_datados(){
 		$datados = $this->db->get('tmst_dosen');
 		return $datados;
-	}
+	}*/
 
 	public function get_prodi(){
 		// return $this ->db ->get_where("tmst_user",array("tmst_dosen_nip" => $id))->result();
@@ -52,6 +52,23 @@ class ModelKoordinator extends CI_Model{
 
 		return $query;
     }
+
+
+    public function get_datados(){
+		return $this->db->get('tmst_dosen');
+		//return $datados;
+	}
+
+
+	public function get_nip($nip){
+		$this ->db ->select('*');
+		$this ->db ->from('tmst_dosen');
+		$this ->db ->where('nip',$nip);
+
+		$query = $this ->db ->get();
+
+		return $query;
+	}
 
 }
 
