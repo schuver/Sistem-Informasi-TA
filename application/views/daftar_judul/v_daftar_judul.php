@@ -9,6 +9,7 @@
 		<p align="center">
 			<table border="1">
 				<tr>
+				
 				<th>No</th>
 					<th>Judul Penelitian</th>
 					<th>Kuota</th>
@@ -17,9 +18,15 @@
 					<th colspan="2"></th>
 				</tr>
 				<?php
+				
                 $no = 1;
                 foreach ($data as $row): ?>
+				<div class="form-group">
+        <label class="col-md-2 control-label" </label>
+            <div class="col-md-10">
 				<tr>
+				
+
 					<td><?php echo $no;?></td>
 					<td><?php echo $row->judul_penelitian;?></td>
 					<td><?php echo $row->kuota;?></td>
