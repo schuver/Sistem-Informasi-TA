@@ -11,7 +11,8 @@ class daftar_judul extends CI_Controller{
 	$data = array(
 		'data'=>$this->m_daftar_judul->get_data(),
 		"menu" => "MenuMhs",
-                 "panelbody" => "apps/koordinator/index");
+                 "panelbody" => "mahasiswa/index");
+				 $this->load->view('panelbody', $data);
 		$this->load->view('daftar_judul/v_daftar_judul',$data);
 	}
 	}
