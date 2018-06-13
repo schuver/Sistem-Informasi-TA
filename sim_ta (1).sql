@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 13 Jun 2018 pada 13.28
+-- Generation Time: 28 Mei 2018 pada 07.32
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -42,27 +42,6 @@ CREATE TABLE `td_review` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `td_tanggal`
---
-
-DROP TABLE IF EXISTS `td_tanggal`;
-CREATE TABLE `td_tanggal` (
-  `id` int(11) NOT NULL,
-  `tgl_awal` date DEFAULT NULL,
-  `tgl_akhir` date DEFAULT NULL,
-  `keterangan` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `td_tanggal`
---
-
-INSERT INTO `td_tanggal` (`id`, `tgl_awal`, `tgl_akhir`, `keterangan`) VALUES
-(13, '2018-06-15', '2018-06-21', 'Awal');
-
--- --------------------------------------------------------
-
---
 -- Struktur dari tabel `tmst_bimbingan`
 --
 
@@ -71,8 +50,7 @@ CREATE TABLE `tmst_bimbingan` (
   `id` int(11) NOT NULL,
   `tmst_ta_id` int(11) NOT NULL,
   `tmst_mahasiswa_nim` varchar(15) NOT NULL,
-  `tmst_dosen_nip` varchar(50) NOT NULL,
-  `status` varchar(100) DEFAULT NULL
+  `tmst_dosen_nip` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -85,55 +63,15 @@ DROP TABLE IF EXISTS `tmst_dosen`;
 CREATE TABLE `tmst_dosen` (
   `nip` varchar(50) NOT NULL,
   `nama` varchar(50) DEFAULT NULL,
-  `no_hp` varchar(30) DEFAULT NULL,
+  `no_hp` varchar(30) NOT NULL,
   `kuota` int(10) DEFAULT NULL,
-  `tmst_prodi_id` int(11) DEFAULT NULL
+  `tmst_prodi_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tmst_dosen`
 --
 
-INSERT INTO `tmst_dosen` (`nip`, `nama`, `no_hp`, `kuota`, `tmst_prodi_id`) VALUES
-('1', 'oa', '0987654321', NULL, 1),
-('197008311998031001', 'Moh. Munih Dian W, S.Kom.,M.T.', '08123307506', NULL, 2),
-('197009292003121001', 'Yogiswara, S.T., M.T.', '081249735955', 0, 3),
-('197011282003121001', 'Hariyono Rakhmad, S.Pd., M.Kom.', '08155905616', NULL, 3),
-('197104082001121003', 'Wahyu Kurnia Dewanto, S.Kom., M.T.', '08125244969', NULL, 1),
-('197110092003121001', 'Denny Trias Utomo, S.Si., M.T.', '08113625320', NULL, 2),
-('197111151998021001', 'Adi Heru Utomo, S.Kom., M.Kom.', '085236010820', 0, 1),
-('197308312008011003', 'Agus Purwadi, S.T., M.T.', '08124914740', 0, 3),
-('197405192003121002', 'Nugroho Setyo Wibowo, S.T.,M.T.', '085236329999', NULL, 2),
-('197709292005011003', 'Didit Rahmat Hartadi S.Kom., M.T.', '085234609168', NULL, 1),
-('197808162005011002', 'Beni Widiawan, S.ST., M.T.', '081336285687', NULL, 3),
-('197808172003121005', 'Agus Hariyanto, S.T., M.Kom.', '085236986278', NULL, 3),
-('197808192005022001', 'Ika Widiastuti, S.ST., M.T.', '081249794912', NULL, 1),
-('197809082005011001', 'Denny Wijanarko, S.T.,M.T.', '082334417777', NULL, 3),
-('197810112005012002', 'Elly Antika, S.T., M.Kom', '08124946073', NULL, 2),
-('197907032003121001', 'Surateno, S.Kom.,M.Kom.', '085236752542', NULL, 3),
-('197909212005011001', 'I Putu Dody Lesmana, S.T.,M.T.', '081250003479', NULL, 2),
-('198005172008121002', 'Dwi Putro Sarwo S, S.Kom., M.Kom.', '085641500007', NULL, 1),
-('198012122005011001', 'Prawidya Destarianto, S.Kom.,M.T.', '085236090999', NULL, 2),
-('198101152005011001', 'Nurul Zainal Fanani, S.ST, M.T.', '081249254949', NULL, 3),
-('198106152006041002', 'Syamsul Arifin, S.Kom., M.Cs.', '081249515151', NULL, 1),
-('198301092018031001', 'Hermawan Arief Putranto, S.T., M.T.', '081252465655', NULL, 1),
-('198302032006041003', 'Hendra Yufit Riskiawan, S.Kom., M.Cs.', '085649222290', NULL, 1),
-('198406252015041004', 'Bekti Maryuni S., S.Pd.,M.Kom.', '085729491540', NULL, 3),
-('198510312018031001', 'Victor Phoa ST.,MCs.', '085656067801', NULL, 3),
-('198511282008121002', 'Aji Seto Arfianto, S.ST., M.T.', '081232534534', NULL, 2),
-('198603192014031001', 'Fendik Eko Purnomo, S.Pd.,M.T.', '085730672884', NULL, 3),
-('198606092008122004', 'Nanik Anita M. ,S.ST.,M.T.', '081234909509', NULL, 1),
-('198608022015042002', 'Ratih Ayuninghemi, S.ST., M.Kom.', '085651152881', NULL, 2),
-('198807022016101001', 'Husin, S.Kom., M.MT.', '081338338833', NULL, 1),
-('198903292015031001', 'Taufiq Rizaldi, S.ST.,M.T.', '081332010455', NULL, 1),
-('198907102015091001', 'Ery Setiawan Julev Atmaji, S.Kom.,M.Cs.', '085648807492', NULL, 2),
-('199002272018032001', 'Trismayanti Dwi P, S.Kom., M,Cs.', '085859184555', NULL, 2),
-('199103152017031001', 'Syamsiar Kautsar, S.ST., M.T.', '081217161711', NULL, 3),
-('199104292017101001', 'Faisal Lutfi Afriansyah, S.Kom., M.T.', '081136205000', NULL, 1),
-('199112112018031001', 'Khafidurohman A., S.Pd., M.Eng.', '085646418027', NULL, 2),
-('199203022018032001', 'Zilvanhisna Emka Fitri, S.T., M.T.', '081336959394', NULL, 2),
-('199205282018032001', 'Bety Etikasari, S.Pd., M.Pd.', '085233975628', NULL, 2),
-('admin', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -167,16 +105,8 @@ CREATE TABLE `tmst_penelitian` (
   `id` int(11) NOT NULL,
   `judul_penelitian` varchar(100) DEFAULT NULL,
   `kuota` int(6) DEFAULT NULL,
-  `tmst_dosen_nip` varchar(50) NOT NULL
+  `tmst_dosen_nip` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `tmst_penelitian`
---
-
-INSERT INTO `tmst_penelitian` (`id`, `judul_penelitian`, `kuota`, `tmst_dosen_nip`) VALUES
-(2, 'fff', 3, '1'),
-(9, 'abcdf', 5, '197008311998031001');
 
 -- --------------------------------------------------------
 
@@ -225,10 +155,11 @@ DROP TABLE IF EXISTS `tmst_ta`;
 CREATE TABLE `tmst_ta` (
   `id` int(11) NOT NULL,
   `judul` varchar(50) DEFAULT NULL,
+  `tgl_input` date DEFAULT NULL,
   `deskripsi` varchar(100) DEFAULT NULL,
-  `tmst_mahasiswa_nim` varchar(15) DEFAULT NULL,
-  `tmst_dosen_nip` varchar(50) DEFAULT NULL,
-  `tmst_penelitian_id` int(11) DEFAULT NULL,
+  `tmst_mahasiswa_nim` varchar(15) NOT NULL,
+  `tmst_dosen_nip` varchar(15) NOT NULL,
+  `tmst_penelitian_id` int(11) NOT NULL,
   `kategori` varchar(35) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -242,10 +173,11 @@ DROP TABLE IF EXISTS `tmst_ta_final`;
 CREATE TABLE `tmst_ta_final` (
   `id` int(11) NOT NULL,
   `judul` varchar(50) DEFAULT NULL,
+  `tgl_input` date DEFAULT NULL,
   `deskripsi` varchar(100) DEFAULT NULL,
   `tmst_mahasiswa_nim` varchar(15) NOT NULL,
-  `tmst_dosen_nip` varchar(50) NOT NULL,
-  `tmst_penelitian_id` int(11) DEFAULT NULL
+  `tmst_dosen_nip` varchar(15) NOT NULL,
+  `tmst_penelitian_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -260,7 +192,7 @@ CREATE TABLE `tmst_user` (
   `password` varchar(255) DEFAULT NULL,
   `level` int(5) DEFAULT NULL,
   `tmst_mahasiswa_nim` varchar(15) DEFAULT NULL,
-  `tmst_dosen_nip` varchar(50) DEFAULT NULL
+  `tmst_dosen_nip` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -268,45 +200,7 @@ CREATE TABLE `tmst_user` (
 --
 
 INSERT INTO `tmst_user` (`id`, `password`, `level`, `tmst_mahasiswa_nim`, `tmst_dosen_nip`) VALUES
-(2, '1', 1, NULL, '1'),
-(6, '197111151998021001', 3, NULL, '197111151998021001'),
-(7, '198606092008122004', 3, NULL, '198606092008122004'),
-(8, '197709292005011003', 3, NULL, '197709292005011003'),
-(9, '198005172008121002', 3, NULL, '198005172008121002'),
-(10, '198302032006041003', 3, NULL, '198302032006041003'),
-(11, '197808192005022001', 3, NULL, '197808192005022001'),
-(12, '198106152006041002', 3, NULL, '198106152006041002'),
-(13, '197104082001121003', 3, NULL, '197104082001121003'),
-(14, '198903292015031001', 3, NULL, '198903292015031001'),
-(15, '198807022016101001', 3, NULL, '198807022016101001'),
-(16, '198301092018031001', 3, NULL, '198301092018031001'),
-(17, '199104292017101001', 3, NULL, '199104292017101001'),
-(18, '197808172003121005', 3, NULL, '197808172003121005'),
-(19, '197808162005011002', 3, NULL, '197808162005011002'),
-(20, '197809082005011001', 3, NULL, '197809082005011001'),
-(21, '197011282003121001', 3, NULL, '197011282003121001'),
-(22, '198101152005011001', 3, NULL, '198101152005011001'),
-(23, '197907032003121001', 3, NULL, '197907032003121001'),
-(24, '198406252015041004', 3, NULL, '198406252015041004'),
-(25, '198603192014031001', 3, NULL, '198603192014031001'),
-(26, '197009292003121001', 3, NULL, '197009292003121001'),
-(27, '197308312008011003', 3, NULL, '197308312008011003'),
-(28, '198510312018031001', 3, NULL, '198510312018031001'),
-(29, '199103152017031001', 3, NULL, '199103152017031001'),
-(30, '197008311998031001', 3, NULL, '197008311998031001'),
-(31, '197909212005011001', 3, NULL, '197909212005011001'),
-(32, '197810112005012002', 3, NULL, '197810112005012002'),
-(33, '197405192003121002', 3, NULL, '197405192003121002'),
-(34, '198012122005011001', 3, NULL, '198012122005011001'),
-(35, '198608022015042002', 3, NULL, '198608022015042002'),
-(36, '199112112018031001', 3, NULL, '199112112018031001'),
-(37, '199205282018032001', 3, NULL, '199205282018032001'),
-(38, '198511282008121002', 3, NULL, '198511282008121002'),
-(39, '198907102015091001', 3, NULL, '198907102015091001'),
-(40, '199002272018032001', 3, NULL, '199002272018032001'),
-(41, '197110092003121001', 3, NULL, '197110092003121001'),
-(42, '199203022018032001', 3, NULL, '199203022018032001'),
-(43, 'admin', 5, NULL, 'admin');
+(1, '123', 4, '123', NULL);
 
 --
 -- Indexes for dumped tables
@@ -319,12 +213,6 @@ ALTER TABLE `td_review`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_td_review_tmst_ta1_idx` (`tmst_ta_id`),
   ADD KEY `fk_td_review_tmst_dosen1_idx` (`tmst_dosen_nip`);
-
---
--- Indexes for table `td_tanggal`
---
-ALTER TABLE `td_tanggal`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tmst_bimbingan`
@@ -406,12 +294,6 @@ ALTER TABLE `td_review`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `td_tanggal`
---
-ALTER TABLE `td_tanggal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
 -- AUTO_INCREMENT for table `tmst_bimbingan`
 --
 ALTER TABLE `tmst_bimbingan`
@@ -421,7 +303,7 @@ ALTER TABLE `tmst_bimbingan`
 -- AUTO_INCREMENT for table `tmst_penelitian`
 --
 ALTER TABLE `tmst_penelitian`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tmst_prodi`
@@ -439,7 +321,7 @@ ALTER TABLE `tmst_proposal`
 -- AUTO_INCREMENT for table `tmst_ta`
 --
 ALTER TABLE `tmst_ta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tmst_ta_final`
@@ -451,7 +333,7 @@ ALTER TABLE `tmst_ta_final`
 -- AUTO_INCREMENT for table `tmst_user`
 --
 ALTER TABLE `tmst_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
