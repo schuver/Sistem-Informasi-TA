@@ -70,6 +70,10 @@ class ModelKoordinator extends CI_Model{
 		return $query;
 	}
 
+	public function get_jadwal(){
+		return $this ->db ->get('td_tanggal');
+	}
+
 }
 
 ?>

@@ -22,10 +22,10 @@
                     <tr>
                         <?php foreach($list as $data){ ?>
                         <td><?php echo $data->nip ?></td>
-                        <td><?php if($data->nama == null){echo "<i>Tidak tersedia</i>";}else{echo $data->nama;} ?></td>
+                        <td><?php if($data->level == 5){echo "<i>- Admin -</i>";}else{echo $data->nama;} ?></td>
                         <td><?php if($data->level==1){echo "Koordinator";}else if($data->level==2){echo "Reviewer";}else if($data->level==3){echo "Dosen";}else if($data->level==4){echo "Mahasiswa";}else{echo "Data Master";} ?></td>
                         <td><?php 
-                        if($data->nip==$this->session->userdata('id_session')){
+                        if($data->nip==$this->session->userdata('id_session') || $data->level ==5){
                             echo "<button type='button'class='btn btn-warning btn-bordered waves-effect w-md waves-light' disabled>Edit</button>";}
                         else{
                             echo anchor('Koordinator/editPrivileges/'.$data->nip,'Edit','id="btnTest" type="button" class="btn btn-warning btn-bordered waves-effect w-md waves-light"');} ?></td>

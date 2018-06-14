@@ -2,13 +2,6 @@
                         <!-- Left Menu Start -->
                         <ul class="metisMenu nav" id="side-menu">
                             <li class="menu-title">List Menu</li>
-                            <!-- <li>
-                                <a href="javascript: void(0);" aria-expanded="true"><i class="fi-air-play"></i><span class="badge badge-success pull-right">2</span> <span> Dashboard </span></a>
-                                <ul class="nav-second-level nav" aria-expanded="true">
-                                    <li><a href="index.html">Dashboard 1</a></li>
-                                    <li><a href="dashboard-2.html">Dashboard 2</a></li>
-                                </ul>
-                            </li> -->
                             <?php if($this ->session ->userdata('level')==1){?>
                                 <li>
                                     <a href="<?php echo base_url(); ?>koordinator"><i class="fa fa-home"></i><span> Beranda</span></a>
@@ -16,17 +9,22 @@
                                 <li>
                                     <a href="<?php echo base_url('koordinator/privileges')?>"><i class="fa fa-lock"></i> <span> Privileges</span></a>
                                 </li>
-                                 <li>
+                                <li>
                                     <a href="<?php echo base_url('koordinator/editkuota')?>"><i class="fa fa-pencil"></i> <span> Edit Kuota</span></a>
+                                </li>
+                                <!-- <li>
+                                    <a href="<?php echo base_url('koordinator/tglInput')?>"><i class="fa fa-pencil"></i> <span> Tanggal Input Judul</span></a>
+                                </li> -->
+                                <li>
+                                    <a href="javascript: void(0);" aria-expanded="true"><i class="fa fa-bar-chart-o"></i> <span> Batas Tanggal Input<span> <span class="menu-arrow"></span></a>
+                                    <ul class="nav-second-level nav" aria-expanded="true">
+                                        <li><a href="<?php echo base_url('koordinator/tglInput')?>"> Input Tanggal</a></li>
+                                        <li><a href="<?php echo base_url('koordinator/listJadwal')?>"> List Jadwal</a></li>
+                                    </ul>
                                 </li>
                                 <li>
                                     <a href="javascript: void(0);" aria-expanded="true"><i class="fa fa-bar-chart-o"></i> <span> Grafik<span> <span class="menu-arrow"></span></a>
                                     <ul class="nav-second-level nav" aria-expanded="true">
-                                        <li><a href="#"> Grafik Total Usulan</a></li>
-                                        <li><a href="#"> Grafik Total Usulan</a></li>
-                                        <li><a href="#"> Grafik Total Usulan</a></li>
-                                        <li><a href="#"> Grafik Total Usulan</a></li>
-                                        <li><a href="#"> Grafik Total Usulan</a></li>
                                         <li><a href="#"> Grafik Total Usulan</a></li>
                                     </ul>
                                 </li>

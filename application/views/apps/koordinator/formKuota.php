@@ -15,12 +15,8 @@
         <label class="col-md-2 control-label" for="exampleInputEmail1">Kuota</label>
             <div class="col-md-10">
                 <input type="text" name="kuota" class="form-control" id="exampleInputEmail1" value="<?php echo $list['kuota'] ?>">
-            </div>
-         </div>
-         <div class="form-group">
-        
-            <div class="col-md-10">
-                <button type="submit" name="btn-update" class="btn btn-custom waves-light waves-effect w-md">Submit</button>
+                <button style="margin-top: 20px;" type="submit" name="btn-update" class="btn btn-custom waves-light waves-effect w-md">Submit</button>
+                <button style="margin-top: 20px;" type="submit" onclick="" class="btn btn-warning waves-effect waves-light">Back</button>
             </div>
          </div>
             

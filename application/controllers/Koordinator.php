@@ -33,7 +33,6 @@ Class Koordinator extends CI_Controller{
     }
 
      public function tampildos(){
-        $this ->load->model('ModelKoordinator');
         $dosen = $this->ModelKoordinator->get_datados()->result();
         $data = array(   
             'menu' => 'MenuAdmin',
@@ -116,5 +115,42 @@ Class Koordinator extends CI_Controller{
         $this->db->update('tmst_dosen', $data);
         redirect('koordinator/editkuota');
 
+    }
+
+    public function listJadwal(){
+        $list = $this ->ModelKoordinator ->get_jadwal()->result();
+        $data = array(
+                "menu" => "MenuAdmin",
+                "panelbody" => "apps/koordinator/listJadwal",
+                "list" => $list
+        );
+        $this->load->view('panelbody', $data);
+    }
+
+    public function tglInput(){
+        $data = array(
+                "menu" => "MenuAdmin",
+                "panelbody" => "apps/koordinator/inputTgl"
+        );
+        $this->load->view('panelbody', $data);
+    }
+
+    public function save_tglInput(){
+        $data = array(
+            'tgl_awal' => $this ->input ->post('tanggal_awal'),
+            'tgl_akhir' => $this ->input ->post('tanggal_akhir'),
+            'keterangan' => $this ->input ->post('ket')
+        );
+
+        $this ->db ->insert('td_tanggal',$data);
+        redirect('koordinator/listJadwal');
+    }
+
+    public function delJadwal(){
+        $id = $this ->uri ->segment(3);
+        $this ->db ->where_in('id',$id);
+        $this ->db ->delete('td_tanggal');
+
+        redirect('koordinator/listJadwal');
     }
 }

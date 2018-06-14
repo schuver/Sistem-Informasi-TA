@@ -18,9 +18,9 @@
                         <option value="1" <?php if($privileges['level']==1){echo "selected";} ?>>1</option>
                         <option value="2" <?php if($privileges['level']==2){echo "selected";} ?>>2</option>
                         <option value="3" <?php if($privileges['level']==3){echo "selected";} ?>>3</option>
-                </select><br>
-            <button type="submit" name="btn-update" class="btn btn-custom waves-light waves-effect w-md">Submit</button>
-            <button type="submit" onclick="" class="btn btn-warning waves-effect waves-light">Back</button>
+                </select>
+            <button style="margin-top: 20px;" type="submit" name="btn-update" class="btn btn-custom waves-light waves-effect w-md">Submit</button>
+            <button style="margin-top: 20px;" type="submit" onclick="" class="btn btn-warning waves-effect waves-light">Back</button>
             </div>
             <!-- <div class="col-md-10">
                 <div class="radio radio-custom">
