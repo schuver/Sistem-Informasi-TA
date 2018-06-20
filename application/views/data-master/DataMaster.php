@@ -1,6 +1,6 @@
 <div class="col-sm-12">
                                 <div class="card-box">
-                                    <h4 class="m-t-0 header-title"><b>Input Data Dosen</b></h4>
+                                    <h4 class="m-t-0 header-title"><b>Tambah Data Dosen</b></h4>
                              
 
                                     <div class="row">
@@ -41,8 +41,8 @@
                                                 <?php
                                                 }
                                                 ?>
-                                        </select><br><br>
-                                                       <button type="submit" name="btn-master" class="btn btn-custom waves-light waves-effect w-md">Simpan</button>
+                                        </select>
+                                                <button style="margin-top: 25px;" type="submit" name="btn-master" class="btn btn-custom waves-light waves-effect w-md">Simpan</button>
                                                         </div>
                                                     </div>
 													

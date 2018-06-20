@@ -13,9 +13,6 @@
                                 <a href="<?php echo base_url(); ?>home"><i class="fa fa-home"></i><span> Beranda</span></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-list"></i> <span> List Mahasiswa</span></a>
-                            </li>
-                            <li>
                                 <a href="#"><i class="fa fa-list"></i> <span> Bimbingan</span></a>
                             </li>
                             <!-- <li>

@@ -16,8 +16,7 @@ Class Mahasiswa extends CI_Controller{
         $this->load->helper('url');
         $data = array(
                 "menu" => "MenuMhs",
-                "body" => "panelbody"
-        );
+               "panelbody" => "mahasiswa/index");
         $this->load->view('panelbody', $data);
     }
 }

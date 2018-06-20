@@ -52,7 +52,7 @@
                                     <div class="col-12">
                                         <a href="#" class="text-muted pull-right"><small>Lupa Password ?</small></a>
                                         <label for="password">Password</label>
-                                        <input class="form-control" type="password" name="password" required id="password" placeholder="Masukkan password anda">
+                                        <input class="form-control" type="password" name="pass" required id="password" placeholder="Masukkan password anda">
                                     </div>
                                 </div>
 
