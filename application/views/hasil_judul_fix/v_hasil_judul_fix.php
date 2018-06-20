@@ -3,10 +3,16 @@
 		<title>Daftar Judul dan Dosen Pembimbing yang Sudah Fix</title>
 	</head>
 	<body>
+	<div class="row">
+    <div class="col-sm-12">
+        <div class="card-box table-responsive">
 		<p><h3 align="center">Daftar Judul dan Dosen Pembimbing yang Sudah Fix</h3></p>
 		
-		<p align="center">
-			<table border="1">
+		<div id="datatable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+	<div class="row">
+    <div class="col-sm-10">
+        <table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
+			
 				<tr>
 				<th>No</th>
 					<th>NIM</th>
