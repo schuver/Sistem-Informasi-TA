@@ -11,9 +11,9 @@ class hasil_review extends CI_Controller{
 	$data = array(
 		'data'=>$this->m_hasil_review->get_data(),
 		"menu" => "MenuMhs",
-                 "panelbody" => "mahasiswa/index");
+                 "panelbody" => "hasil_review/v_hasil_review");
 				 $this->load->view('panelbody', $data);
-		$this->load->view('hasil_review/v_hasil_review',$data);
+
 	}
 	}
 ?>
