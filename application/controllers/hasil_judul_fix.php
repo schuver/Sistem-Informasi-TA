@@ -11,9 +11,9 @@ class hasil_judul_fix extends CI_Controller{
 	$data = array(
 		'data'=>$this->m_hasil_judul_fix->get_data(),
 		"menu" => "MenuMhs",
-                 "panelbody" => "mahasiswa/index");
+                 "panelbody" => "hasil_judul_fix/v_hasil_judul_fix");
 				 $this->load->view('panelbody', $data);
-		$this->load->view('hasil_judul_fix/v_hasil_judul_fix',$data);
+
 	}
 	}
 ?>
