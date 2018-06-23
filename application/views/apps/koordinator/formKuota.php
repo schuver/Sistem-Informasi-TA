@@ -7,7 +7,7 @@
         <div class="form-group">
         <label class="col-md-2 control-label" for="exampleInputEmail1">Prodi</label>
             <div class="col-md-10">
-                <input type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $prodi['nama_prodi'] ?>" disabled>
+                <input type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $list2['nama_prodi'] ?>" disabled>
             </div>
          </div>
 

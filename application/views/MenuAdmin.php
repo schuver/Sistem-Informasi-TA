@@ -12,11 +12,11 @@
                                 <li>
                                     <a href="<?php echo base_url('koordinator/editkuota')?>"><i class="fa fa-pencil"></i> <span> Edit Kuota</span></a>
                                 </li>
-                                <!-- <li>
-                                    <a href="<?php echo base_url('koordinator/tglInput')?>"><i class="fa fa-pencil"></i> <span> Tanggal Input Judul</span></a>
-                                </li> -->
                                 <li>
-                                    <a href="javascript: void(0);" aria-expanded="true"><i class="fa fa-bar-chart-o"></i> <span> Batas Tanggal Input<span> <span class="menu-arrow"></span></a>
+                                    <a href="<?php echo base_url('koordinator/bimbinganMhs')?>"><i class="fa fa-pencil"></i> <span> Bimbingan Mahasiswa</span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript: void(0);" aria-expanded="true"><i class="fa fa-calendar-check-o"></i> <span> Batas Tanggal Input<span> <span class="menu-arrow"></span></a>
                                     <ul class="nav-second-level nav" aria-expanded="true">
                                         <li><a href="<?php echo base_url('koordinator/tglInput')?>"> Input Tanggal</a></li>
                                         <li><a href="<?php echo base_url('koordinator/listJadwal')?>"> List Jadwal</a></li>

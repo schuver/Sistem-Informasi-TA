@@ -66,25 +66,13 @@ Class Koordinator extends CI_Controller{
         redirect('koordinator/privileges');
     }
 
-    /*---------------------------------------------------------------------------------------------------------------------*/
-
     public function editkuota(){
-        /*$this ->load->model('ModelKoordinator');
-        $dosen = $this->ModelKoordinator->get_datados()->result();
-        $data = array(   
-            'menu' => 'MenuAdmin',
-            'panelbody' => 'apps/koordinator/EditKuotaDos',
-            'dosen' => $dosen
-        );
-        $this ->load ->view('panelbody',$data);*/
-        $id = $this ->session ->userdata('id_session');
+        // $id = $this ->session ->userdata('id_session');
         $list = $this ->ModelKoordinator ->get_user()->result();
-        $prodi = $this ->ModelKoordinator ->get_prodi($id);
         $data = array(
             'menu' => 'MenuAdmin',
             'panelbody' => 'apps/koordinator/EditKuotaDos',
-            'list' => $list,
-            'prodi' => $prodi
+            'list' => $list
         );
         $this ->load ->view('panelbody',$data);
     }
@@ -92,16 +80,13 @@ Class Koordinator extends CI_Controller{
      public function tampildiformkuota(){
             $id = $this->uri->segment(3);
             $list = $this->ModelKoordinator->get_nip($id)->row_array();
-            $prodi = $this ->ModelKoordinator ->get_prodi($id);
+            $list2 = $this ->ModelKoordinator ->get_user_edit($id)->row_array();
             $data = array(
             "menu" => "MenuAdmin",
             "panelbody" => "apps/koordinator/editkuota",
             "formKuota" => "apps/koordinator/formKuota",
             "list" => $list,
-            "prodi"=> $prodi
-            //"user" => $user,
-            //"prodi" => $prodi
-            // "visi" => $visi
+            "list2" => $list2
         );
              $this->load->view('panelbody', $data);
     }
@@ -152,5 +137,40 @@ Class Koordinator extends CI_Controller{
         $this ->db ->delete('td_tanggal');
 
         redirect('koordinator/listJadwal');
+    }
+
+    public function bimbinganMhs(){
+        $list = $this->ModelKoordinator->bimbingan()->result();
+        $data = array(
+            "menu" => "MenuAdmin",
+            "panelbody" => "apps/koordinator/listbimbingan",
+            "list" => $list
+        );
+
+        $this ->load ->view('panelbody',$data);
+    }
+
+    public function editBimbingan(){
+            $id = $this->uri->segment(3);
+            $bimbingan = $this->ModelKoordinator->get_bimbingan($id)->row_array();
+            $list2 = $this ->ModelKoordinator ->get_user_edit($id)->row_array();
+            $data = array(
+            "menu" => "MenuAdmin",
+            "panelbody" => "apps/koordinator/editBimbingan",
+            "formBimbingan" => "apps/koordinator/formBimbingan",
+            "bimbingan" => $bimbingan,
+            "list2" => $list2
+        );
+        $this->load->view('panelbody', $data);
+    }
+
+    public function simpanBimbingan(){
+        $id = $this->input->post('id');
+        $data = array(
+            'status'=> $this->input->post('status')
+        );
+        $this->db->where('tmst_bimbingan.id', $id);
+        $this->db->update('tmst_bimbingan', $data);
+        redirect('koordinator/bimbinganMhs');
     }
 }

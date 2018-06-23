@@ -13,6 +13,9 @@
                     <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 250px;">Nama
                     </th>
 
+                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 250px;">Prodi
+                    </th>
+
                     <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 250px;">Kuota
                     </th>
 
@@ -28,6 +31,7 @@
                         <td><?php 
                         if($data->level != 5){echo $data->nama; }
                         else{ echo "<i>- Admin -</i>"; } ?></td>
+                        <td><?php echo $data->nama_prodi ?></td>
                         <td><?php 
                         if($data->kuota != null && $data->kuota !=0){echo $data->kuota;}
                         else{ echo "<i>Belum tersedia</i>"; } ?></td>
