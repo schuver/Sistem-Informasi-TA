@@ -3,10 +3,15 @@
 		<title>Hasil Review Judul</title>
 	</head>
 	<body>
+		<div class="row">
+    <div class="col-sm-12">
+        <div class="card-box table-responsive">
 		<p><h3 align="center">Hasil Review Judul Tugas Akhir</h3></p>
 		
-		<p align="center">
-			<table border="1">
+		   <div id="datatable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+	<div class="row">
+    <div class="col-sm-10">
+        <table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
 				<tr>
 				<th>No</th>
 					<th>NIM</th>
@@ -16,7 +21,7 @@
 					<th>deskripsi</th>
 					<th>Hasil Review</th>
 					<th>Status</th>
-					<th colspan="2"></th>
+				
 				</tr>
 				<?php
                 $no = 1;

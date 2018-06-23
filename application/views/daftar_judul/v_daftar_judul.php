@@ -3,30 +3,35 @@
 		<title>Daftar Judul DOsen</title>
 	</head>
 	<body>
+	<div class="row">
+    <div class="col-sm-12">
+        <div class="card-box table-responsive">
 		<p><h3 align="center">Daftar Judul Dosen</h3></p>
-		
 
-		<p align="center">
-			<table border="1">
-				<tr>
+    <div id="datatable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+	<div class="row">
+    <div class="col-sm-10">
+        <table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
+			
+               <tr>
+			   
+				<th  colspan="1"></th>
 				
 				<th>No</th>
-					<th>Judul Penelitian</th>
-					<th>Kuota</th>
-					<th>NIP</th>
-					<th>Nama Dosen</th>
-					<th colspan="2"></th>
+				<th>Judul Penelitian</th>
+				<th>Kuota</th>
+				<th>NIP</th>
+				<th>Nama Dosen</th>
+					
 				</tr>
+				
 				<?php
 				
                 $no = 1;
                 foreach ($data as $row): ?>
-				<div class="form-group">
-        <label class="col-md-2 control-label" </label>
-            <div class="col-md-10">
-				<tr>
+		
 				
-
+					<th colspan="1"></th>
 					<td><?php echo $no;?></td>
 					<td><?php echo $row->judul_penelitian;?></td>
 					<td><?php echo $row->kuota;?></td>
@@ -37,7 +42,14 @@
 				
 				<?php $no++;
                 endforeach;?>
+				
 			</table>
 		</p>
+		  </div>
+</div>
+</div>
+        </div>
+    </div>
+</div>
 	</body>
 </html>
