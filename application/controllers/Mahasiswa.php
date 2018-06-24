@@ -19,4 +19,27 @@ Class Mahasiswa extends CI_Controller{
                "panelbody" => "mahasiswa/index");
         $this->load->view('panelbody', $data);
     }
+
+   //--------------------------------------------------------------------------------
+
+    public function daftarujian(){
+        $data = array(
+            'menu' => 'MenuMhs',
+            'panelbody' => 'mahasiswa/DaftarUjian'
+        );
+        $this ->load ->view('panelbody',$data);
+    }
+
+    public function simpandaftar(){
+    		$datados = array(
+    		'tanggal' => $this ->input ->post('tanggal'),
+    		'waktu' => $this ->input ->post('waktu'),
+    		'tempat' => $this ->input ->post('tempat'),
+			'tmst_mahasiswa_nim' => $this ->input ->post('tmst_mahasiswa_nim')
+			);
+
+    	$this ->db ->insert("tmst_proposal",$datados);
+    					
+		redirect('Mahasiswa');
+    }
 }

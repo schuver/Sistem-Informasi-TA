@@ -15,6 +15,9 @@
                             <li>
                                 <a href="#"><i class="fa fa-list"></i> <span> Bimbingan</span></a>
                             </li>
+                            <li>
+                                <a href="Mahasiswa/daftarujian"><i class="fa fa-list"></i> <span> Form Pendaftaran Ujian</span></a>
+                            </li>
                             <!-- <li>
                                 <a href="javascript: void(0);" aria-expanded="true"><i class="fa fa-lock"></i> <span> Privileges<span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level nav" aria-expanded="true">
