@@ -15,6 +15,9 @@
                             <li>
                                 <a href="<?php echo base_url('dosen/tampilmhs')?>"><i class="fa fa-list"></i> <span> List Mahasiswa</span></a>
                             </li>
+                            <li>
+                                <a href="<?php echo base_url('dosen/pilih')?>"><i class="fa fa-list"></i> <span> Pilih Mahasiswa</span></a>
+                            </li>
                            
                             <!-- <li>
                                 <a href="javascript: void(0);" aria-expanded="true"><i class="fa fa-lock"></i> <span> Privileges<span> <span class="menu-arrow"></span></a>

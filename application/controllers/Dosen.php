@@ -47,4 +47,50 @@ Class Dosen extends CI_Controller{
         );
         $this ->load ->view('panelbody',$data);
     }
+
+// firhan
+    public function pilih(){
+        $id = $this ->session ->userdata('id_session');
+        $list = $this ->ModelDosen ->get_userpilih($id)->result();
+        // $nim_mahasiswa = $this ->ModelDosen ->get_nim_mahasiswa($id);
+        // $nip_dosen = $this ->ModelDosen ->get_nip_dosen($id);
+        $data = array(
+            'menu' => 'MenuDosen',
+            'panelbody' => 'apps/Dosen/list',
+            'listData' => $list,
+            'id' => $id
+            // 'nim_mahasiswa' => $nim_mahasiswa,
+            // 'nip_dosen' => $nip_dosen
+        );
+        $this ->load ->view('panelbody',$data);
+    }
+
+    public function edit(){
+        $id = $this->uri->segment(3);
+        $user = $this->ModelDosen->get_dataFinal($id)->result();
+       // $prodi = $this ->ModelDosen ->get_prodi();
+        // $nim_mahasiswa = $this->ModelDosen->get_nim_mahasiswa($id);
+        $data = array(
+            "menu" => "MenuDosen",
+            "panelbody" => "apps/dosen/editPilih",
+            "formPemilihan" => "apps/dosen/formPilih",
+            // "nim_mahasiswa" => $nim_mahasiswa,
+            "user" => $user
+         //   "prodi" => $prodi
+            // "visi" => $visi
+        );
+        $this->load->view('panelbody', $data);
+    }
+
+    public function update(){
+        $id = $this ->input ->post('id');
+        // $id = $this ->uri->segment(3);
+        $data = array(
+            'status' => 'Belum');
+        $this ->db ->where('id',$id);
+        $this ->db ->update('tmst_bimbingan',$data);
+        redirect('dosen/pilih');
+    }
+
+
 }
