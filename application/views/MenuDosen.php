@@ -13,6 +13,9 @@
                                 <a href="<?php echo base_url(); ?>dosen"><i class="fa fa-home"></i><span> Beranda</span></a> 
                             </li>
                             <li>
+                                <a href="<?php echo base_url('dosen/simpan')?>"><i class="fa fa-list"></i> <span> Input Judul</span></a>
+                            </li>
+                            <li>
                                 <a href="<?php echo base_url('dosen/tampilmhs')?>"><i class="fa fa-list"></i> <span> List Mahasiswa</span></a>
                             </li>
                             <li>

@@ -80,4 +80,10 @@ public function get_datados(){
          return $this->db->get()->row_array();
 	 }
 
+//firda
+
+	 public function get_penelitian(){
+		return $this ->db ->insert('id','kuota','judul_penelitian')->into("tmst_penelitian")->result();
+	}
+
 } 

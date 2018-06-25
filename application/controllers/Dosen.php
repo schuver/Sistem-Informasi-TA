@@ -92,5 +92,27 @@ Class Dosen extends CI_Controller{
         redirect('dosen/pilih');
     }
 
+//firda
+
+    public function input_judul(){
+        $data = array(
+            'menu' => 'MenuDosen',
+            'panelbody' => 'apps/dosen/list_judul'
+            
+        );
+        $this ->load ->view('panelbody',$data);
+    }
+
+    public function simpan(){
+       
+        $datapenelitian = array(
+            'judul_penelitian' => $this ->input ->post('judul_penelitian'),
+            'kuota' => $this ->input ->post('kuota'),
+            'tmst_dosen_nip' => $this ->session->userdata('id_session'));
+        
+        $this ->db ->insert("tmst_penelitian" ,$datapenelitian);
+                
+        redirect('dosen/input_judul');
+    }
 
 }
