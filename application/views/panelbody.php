@@ -2,10 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Adminox - Responsive Web App Kit</title>
+        <title>Sistem Informasi TA</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-        <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App favicon -->
@@ -114,13 +112,7 @@
                                     <h4 class="page-title">Dashboard</h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
-                                            <a href="#">Adminox</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Dashboard</a>
-                                        </li>
-                                        <li class="active">
-                                            Dashboard 1
+                                            <a href="#">Sistem Informasi TA</a>
                                         </li>
                                     </ol>
                                     <div class="clearfix"></div>
@@ -210,7 +202,12 @@
         </script>
 
         <!--FooTable-->
-        <script src="<?php echo base_url(); ?>layout/assetsplugins/footable/js/footable.all.min.js"></script>
+        <script src="<?php echo base_url(); ?>layout/assets/plugins/footable/js/footable.all.min.js"></script>
+
+
+        <script type="text/javascript" src="<?php echo base_url(); ?>layout/assets/plugins/d3/d3.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>layout/assets/plugins/c3/c3.min.js"></script>
+        <script src="<?php echo base_url(); ?>layout/assets/pages/jquery.c3-chart.init.js"></script>
 
         <!--FooTable Example-->
         <script src="<?php echo base_url(); ?>layout/assets/pages/jquery.footable.js"></script>

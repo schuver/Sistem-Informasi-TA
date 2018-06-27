@@ -261,7 +261,8 @@ Class Mahasiswa extends CI_Controller{
             'tmst_mahasiswa_nim' => null,
             'tmst_dosen_nip' => $this ->input ->post('nip'),
             'tmst_penelitian_id' => $this ->input ->post('penelitian'),
-            'kategori' => $this ->input ->post('kategori')
+            'kategori' => $this ->input ->post('kategori'),
+            'status' => 0
         );
 
         $this ->db ->insert('tmst_ta_final',$data);

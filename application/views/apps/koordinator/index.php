@@ -28,7 +28,7 @@
                         <td><?php echo $data->judul_penelitian ?></td>
                         <td><?php echo $data->kuota ?></td>
                     </tr>
-                        <?php }?>
+                        <?php $no++; }?>
             </tbody>
         </table>
     </div>

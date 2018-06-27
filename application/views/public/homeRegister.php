@@ -2,10 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Highdmin - Responsive Bootstrap 4 Admin Dashboard</title>
+        <title>Sistem Informasi Ta</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-        <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App favicon -->
@@ -100,7 +98,7 @@
                                 <div class="form-group row m-b-20">
                                     <div class="col-12">
                                         <label for="password">Password</label>
-                                        <input class="form-control" name="password" type="password" required="" id="password" placeholder="Enter your password">
+                                        <input class="form-control" name="password" type="password" required="" id="password" placeholder="Masukkan Password">
                                     </div>
                                 </div>
 
@@ -119,7 +117,7 @@
 
                                 <div class="form-group row text-center m-t-10">
                                     <div class="col-12">
-                                        <button class="btn btn-block btn-custom waves-effect waves-light" type="submit">Sign Up Free</button>
+                                        <button class="btn btn-block btn-custom waves-effect waves-light" type="submit">Daftar</button>
                                     </div>
                                 </div>
 
@@ -127,13 +125,16 @@
 
                             <div class="row">
                                 <div class="col-sm-12 text-center">
-                                    <p class="text-muted">Already have an account?  <a href="<?php echo base_url('login'); ?>" class="text-dark m-l-5"><b>Sign In</b></a></p>
+                                    <p class="text-muted">Sudah Punya Akun ?  <a href="<?php echo base_url('login'); ?>" class="text-dark m-l-5"><b> Masuk Disini</b></a></p>
                                 </div>
                             </div>
 
                         </div>
                     </div>
 
+            <div class="m-t-40 text-center">
+                <p class="account-copyright">2018 © Manajemen Informatika</p>
+            </div>
                 </div>
             </div>
 <!-- 

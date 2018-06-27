@@ -62,6 +62,22 @@ class ModelKoordinator extends CI_Model{
 		return $this ->db ->get('td_tanggal');
 	}
 
+	public function get_list_ta(){
+		$this->db->select('tmst_ta.*,tmst_mahasiswa.nim,tmst_mahasiswa.nama,tmst_dosen.nama as nama_dosen');
+		$this->db->join('tmst_dosen','tmst_dosen.nip = tmst_ta.tmst_dosen_nip');
+		$this->db->join('tmst_mahasiswa','tmst_mahasiswa.nim = tmst_ta.tmst_mahasiswa_nim');
+		$this->db->from('tmst_ta');
+		return $this->db->get();
+	}
+
+	public function get_list_ta_final(){
+		$this->db->select('tmst_ta_final.*,tmst_mahasiswa.nim,tmst_mahasiswa.nama,tmst_dosen.nama as nama_dosen');
+		$this->db->join('tmst_dosen','tmst_dosen.nip = tmst_ta_final.tmst_dosen_nip');
+		$this->db->join('tmst_mahasiswa','tmst_mahasiswa.nim = tmst_ta_final.tmst_mahasiswa_nim');
+		$this->db->from('tmst_ta_final');
+		return $this->db->get();
+	}
+
 	public function get_editJadwal($id){
 		$this ->db ->select('*');
 		$this ->db ->from('td_tanggal');
@@ -73,7 +89,7 @@ class ModelKoordinator extends CI_Model{
 	}
 
 	public function bimbingan(){
-		$this->db->select('tmst_bimbingan.*,tmst_mahasiswa.nim,tmst_mahasiswa.nama as nama_mhs,tmst_ta_final.judul,tmst_dosen.nama');
+		$this->db->select('tmst_bimbingan.*,tmst_mahasiswa.nim,tmst_mahasiswa.nama,tmst_ta_final.judul,tmst_dosen.nama as nama_dosen');
 		$this->db->join('tmst_ta_final','tmst_ta_final.id = tmst_bimbingan.tmst_ta_final_id');
 		$this->db->join('tmst_dosen','tmst_dosen.nip = tmst_bimbingan.tmst_dosen_nip');
 		$this->db->join('tmst_mahasiswa','tmst_mahasiswa.nim = tmst_bimbingan.tmst_mahasiswa_nim');
@@ -94,14 +110,23 @@ class ModelKoordinator extends CI_Model{
 		return $query;
 	}
     
+	public function get_daftar_bimbingan($id){
+	
+	$this->db->select('*');
+    $this->db->from('tmst_bimbingan'); 
+    $this->db->where('tmst_dosen_nip',$id);
+    return $this->db->get();
+	}
+    
 	public function get_data_penelitian(){
 	
-	$this->db->select('tmst_penelitian.*, tmst_dosen.nama'); 
+	$this->db->select('*');
+    $this->db->join('tmst_dosen', 'tmst_dosen.nip = tmst_penelitian.tmst_dosen_nip');
     $this->db->from('tmst_penelitian'); 
-    $this->db->join('tmst_dosen', 'tmst_dosen.nip = tmst_penelitian.tmst_dosen_nip', 'left');
     $data = $this->db->get(); 
     return $data->result(); 
 	}
+
 
 }
 

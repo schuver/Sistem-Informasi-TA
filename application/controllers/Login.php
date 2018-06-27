@@ -47,7 +47,7 @@ Class Login extends CI_Controller{
 	    			$this ->session ->set_userdata('id_session', $data['tmst_dosen_nip']);
 	    			$this ->session ->set_userdata('name_session', $dos['nama']);
 
-	    			// redirect('dosen');
+	    			redirect('reviewer');
 	    			$this ->load ->view('apps/reviewer/index.php');
 	    		}else if($data['level'] == 3){
 
