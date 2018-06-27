@@ -38,7 +38,6 @@ Class Dosen extends CI_Controller{
  }
 
  public function tampilmhs(){
-        $this ->load->model('ModelDosen');
         $list_mhs = $this->ModelDosen->get_datados()->result();
         $data = array(   
             'menu' => 'MenuDosen',
