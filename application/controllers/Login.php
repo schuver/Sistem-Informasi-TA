@@ -17,7 +17,7 @@ Class Login extends CI_Controller{
     public function prosesLogin(){
 
     	$user = $this ->input ->post('username');
-    	$pass = $this ->input ->post('pass');
+    	$pass = md5($this ->input ->post('pass'));
 
 
     	$vD = $this ->ModelLogin ->cek_dosen($user);

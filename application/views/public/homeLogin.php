@@ -77,7 +77,7 @@
 
                             <div class="row m-t-50">
                                 <div class="col-sm-12 text-center">
-                                    <p class="text-muted">Belum punya mendaftar ? <a href="<?php echo base_url('register'); ?>" class="text-dark m-l-5"><b>Daftar disini</b></a></p>
+                                    <p class="text-muted">Belum punya akun ? <a href="<?php echo base_url('register'); ?>" class="text-dark m-l-5"><b>Daftar disini</b></a></p>
                                 </div>
                             </div>
 

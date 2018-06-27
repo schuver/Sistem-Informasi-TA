@@ -24,7 +24,7 @@ Class Register extends CI_Controller{
     		'tmst_prodi_id' => $this ->input ->post('id_prodi'));
     	$dataUser = array(
     		'tmst_mahasiswa_nim' => $this ->input ->post('nim'),
-    		'password' => $this ->input ->post('password'),
+    		'password' => md5($this ->input ->post('password')),
     		'level' => '4');
     	$this ->db ->insert("tmst_mahasiswa",$dataMhs);
     	$this ->db ->insert("tmst_user",$dataUser);
