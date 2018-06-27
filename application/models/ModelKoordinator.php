@@ -62,6 +62,16 @@ class ModelKoordinator extends CI_Model{
 		return $this ->db ->get('td_tanggal');
 	}
 
+	public function get_editJadwal($id){
+		$this ->db ->select('*');
+		$this ->db ->from('td_tanggal');
+		$this ->db ->where('id',$id);
+
+		$query = $this ->db ->get();
+
+		return $query;
+	}
+
 	public function bimbingan(){
 		$this->db->select('tmst_bimbingan.*,tmst_mahasiswa.nim,tmst_mahasiswa.nama as nama_mhs,tmst_ta_final.judul,tmst_dosen.nama');
 		$this->db->join('tmst_ta_final','tmst_ta_final.id = tmst_bimbingan.tmst_ta_final_id');
@@ -82,6 +92,15 @@ class ModelKoordinator extends CI_Model{
 		$query = $this ->db ->get();
 
 		return $query;
+	}
+    
+	public function get_data_penelitian(){
+	
+	$this->db->select('tmst_penelitian.*, tmst_dosen.nama'); 
+    $this->db->from('tmst_penelitian'); 
+    $this->db->join('tmst_dosen', 'tmst_dosen.nip = tmst_penelitian.tmst_dosen_nip', 'left');
+    $data = $this->db->get(); 
+    return $data->result(); 
 	}
 
 }

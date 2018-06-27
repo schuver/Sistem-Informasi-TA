@@ -1,8 +1,8 @@
-<?php echo form_open('mahasiswa/saveInputFix','class="form-horizontal" role="form"');?>
+<?php echo form_open('mahasiswa/saveInputTafinal','class="form-horizontal" role="form"');?>
 <div class="row">
     <div class="col-sm-12">
         <div class="card-box">
-            <h4 class="m-t-0 header-title"><b>Input Usulan Judul FIX Tugas Akhir</b></h4>
+            <h4 class="m-t-0 header-title"><b>Input Usulan Judul Tugas Akhir Final</b></h4>
             <div class="row">
                 <div class="col-md-12">
                     <div class="p-20">
@@ -64,7 +64,6 @@
                             </div>
                         </div>
         <?php }else{ ?>
-            <!-- <h4 class="m-t-0 header-title"><b>Proses Input Usulan Judul Tugas Akhir Masih Belum Diijinkan</b></h4> -->
                 <div class="panel panel-color panel-info">
                     <div class="panel-heading">
                         <h3 class="panel-title">Penginputan Belum Diijinkan</h3>

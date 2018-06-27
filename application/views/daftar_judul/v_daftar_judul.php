@@ -28,7 +28,7 @@
 				<?php
 				
                 $no = 1;
-                foreach ($data as $row): ?>
+                foreach ($list as $row): ?>
 		
 				
 					<th colspan="1"></th>
@@ -36,7 +36,7 @@
 					<td><?php echo $row->judul_penelitian;?></td>
 					<td><?php echo $row->kuota;?></td>
 					<td><?php echo $row->tmst_dosen_nip;?></td>
-					<td><?php echo $row->nama_dosen;?></td>
+					<td><?php echo $row->nama;?></td>
 					
 				</tr>
 				

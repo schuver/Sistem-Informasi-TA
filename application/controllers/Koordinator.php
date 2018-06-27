@@ -7,6 +7,7 @@ Class Koordinator extends CI_Controller{
 		parent::__construct();
         $this->load->helper('url');
 		$this ->load ->model('ModelKoordinator');
+        $this ->load ->model('ModelMahasiswa');
 		if($this ->session ->userdata('logon') != true && $this ->session ->userdata('level') != 1){
 
 			redirect(base_url('login'));
@@ -14,9 +15,11 @@ Class Koordinator extends CI_Controller{
 	}
 
     public function index(){
+        $list = $this->ModelMahasiswa->get_data_penelitian();
         $data = array(
                 "menu" => "MenuAdmin",
-                "panelbody" => "apps/koordinator/index"
+                "panelbody" => "apps/koordinator/index",
+                "list" => $list
         );
         $this->load->view('panelbody', $data);
     }
@@ -136,6 +139,30 @@ Class Koordinator extends CI_Controller{
         $this ->db ->where_in('id',$id);
         $this ->db ->delete('td_tanggal');
 
+        redirect('koordinator/listJadwal');
+    }
+
+    public function editJadwal(){
+            $id = $this->uri->segment(3);
+            $jadwal = $this->ModelKoordinator->get_editJadwal($id)->row_array();
+            $data = array(
+            "menu" => "MenuAdmin",
+            "panelbody" => "apps/koordinator/editJadwal",
+            "formJadwal" => "apps/koordinator/formJadwal",
+            "jadwal" => $jadwal
+        );
+        $this->load->view('panelbody', $data);
+    }
+
+    public function simpanJadwal(){
+        $id = $this->input->post('id');
+        $data = array(
+            'tgl_awal'=> $this->input->post('tanggal_awal'),
+            'tgl_akhir'=> $this->input->post('tanggal_akhir'),
+            'keterangan'=> $this->input->post('keterangan')
+        );
+        $this->db->where('id', $id);
+        $this->db->update('td_tanggal', $data);
         redirect('koordinator/listJadwal');
     }
 

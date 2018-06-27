@@ -28,22 +28,24 @@ Class Login extends CI_Controller{
     		$val_pass_dosen = $this ->ModelLogin ->get_pass_dosen($user)->row_array();
     		$val_pass_mhs = $this ->ModelLogin ->get_pass_mhs($user)->row_array();
 
+
 	    	if($val_pass_dosen['password'] == $pass){
 	    		$this ->session ->set_userdata('logon', true);
     			$data = $this ->ModelLogin ->get_level_dosen($user)->row_array();
+				$dos = $this->ModelLogin->get_name_dosen($user)->row_array();
 
 	    		if($data['level'] == 1){
 
 	    			$this ->session ->set_userdata('level', '1');
 	    			$this ->session ->set_userdata('id_session', $data['tmst_dosen_nip']);
-	    			// $this ->session ->set_userdata('name_session', $data['nama']);
+	    			$this ->session ->set_userdata('name_session', $dos['nama']);
 
 	    			redirect('koordinator');
 	    		}else if($data['level'] == 2){
 
 	    			$this ->session ->set_userdata('level', '2');
 	    			$this ->session ->set_userdata('id_session', $data['tmst_dosen_nip']);
-	    			// $this ->session ->set_userdata('name_session', $data['nama']);
+	    			$this ->session ->set_userdata('name_session', $dos['nama']);
 
 	    			// redirect('dosen');
 	    			$this ->load ->view('apps/reviewer/index.php');
@@ -51,7 +53,7 @@ Class Login extends CI_Controller{
 
 	    			$this ->session ->set_userdata('level', '3');
 	    			$this ->session ->set_userdata('id_session', $data['tmst_dosen_nip']);
-	    			// $this ->session ->set_userdata('name_session', $data['nama']);
+	    			$this ->session ->set_userdata('name_session', $dos['nama']);
 
 	    			 redirect('dosen');
 	    			$this ->load ->view('apps/dosen/index.php');
@@ -59,7 +61,7 @@ Class Login extends CI_Controller{
 
 	    			$this ->session ->set_userdata('level', '5');
 	    			$this ->session ->set_userdata('id_session', $data['tmst_dosen_nip']);
-	    			// $this ->session ->set_userdata('name_session', $data['nama']);
+	    			$this ->session ->set_userdata('name_session', $dos['nama']);
 
 	    			redirect('DataMaster');
 	    		}else{
@@ -68,12 +70,13 @@ Class Login extends CI_Controller{
     		}else if($val_pass_mhs['password'] == $pass){
 	    		$this ->session ->set_userdata('logon', true);
     			$data = $this ->ModelLogin ->get_level_mhs($user)->row_array();
+				$mhs = $this->ModelLogin->get_name_mhs($user)->row_array();
 
 	    		if($data['level'] == 4){
 
 	    			$this ->session ->set_userdata('level', '4');
 	    			$this ->session ->set_userdata('id_session', $data['tmst_mahasiswa_nim']);
-	    			// $this ->session ->set_userdata('name_session', $data['nama']);
+	    			$this ->session ->set_userdata('name_session', $mhs['nama']);
 
 	    			redirect('mahasiswa');
 	    		}else{

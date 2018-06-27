@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 13 Jun 2018 pada 14.22
+-- Generation Time: 27 Jun 2018 pada 15.12
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -33,11 +33,19 @@ USE `sim_ta`;
 DROP TABLE IF EXISTS `td_review`;
 CREATE TABLE `td_review` (
   `id` int(11) NOT NULL,
-  `hasil_review` varchar(100) DEFAULT NULL,
+  `hasil_review` text,
   `status` varchar(30) DEFAULT NULL,
   `tmst_ta_id` int(11) NOT NULL,
   `tmst_dosen_nip` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `td_review`
+--
+
+INSERT INTO `td_review` (`id`, `hasil_review`, `status`, `tmst_ta_id`, `tmst_dosen_nip`) VALUES
+(1, 'kurang', 'Ditolak', 15, '197009292003121001'),
+(2, 'wow', 'diterima', 16, '197104082001121003');
 
 -- --------------------------------------------------------
 
@@ -58,7 +66,8 @@ CREATE TABLE `td_tanggal` (
 --
 
 INSERT INTO `td_tanggal` (`id`, `tgl_awal`, `tgl_akhir`, `keterangan`) VALUES
-(13, '2018-06-15', '2018-06-21', 'Awal');
+(27, '2018-06-26', '2018-06-26', 'Awal'),
+(28, '2018-06-19', '2018-06-16', 'Final');
 
 -- --------------------------------------------------------
 
@@ -72,8 +81,15 @@ CREATE TABLE `tmst_bimbingan` (
   `tmst_mahasiswa_nim` varchar(15) NOT NULL,
   `tmst_dosen_nip` varchar(50) NOT NULL,
   `status` varchar(100) DEFAULT NULL,
-  `tmst_ta_final_id` int(11) NOT NULL
+  `tmst_ta_final_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tmst_bimbingan`
+--
+
+INSERT INTO `tmst_bimbingan` (`id`, `tmst_mahasiswa_nim`, `tmst_dosen_nip`, `status`, `tmst_ta_final_id`) VALUES
+(1, '123', '197008311998031001', 'Belum', 1);
 
 -- --------------------------------------------------------
 
@@ -95,15 +111,15 @@ CREATE TABLE `tmst_dosen` (
 --
 
 INSERT INTO `tmst_dosen` (`nip`, `nama`, `no_hp`, `kuota`, `tmst_prodi_id`) VALUES
-('1', 'oa', '0987654321', NULL, 1),
-('197008311998031001', 'Moh. Munih Dian W, S.Kom.,M.T.', '08123307506', NULL, 2),
+('1', 'oa', '0987654321', 0, 1),
+('197008311998031001', 'Moh. Munih Dian W, S.Kom.,M.T.', '08123307506', 0, 2),
 ('197009292003121001', 'Yogiswara, S.T., M.T.', '081249735955', 0, 3),
-('197011282003121001', 'Hariyono Rakhmad, S.Pd., M.Kom.', '08155905616', NULL, 3),
-('197104082001121003', 'Wahyu Kurnia Dewanto, S.Kom., M.T.', '08125244969', NULL, 1),
+('197011282003121001', 'Hariyono Rakhmad, S.Pd., M.Kom.', '08155905616', 0, 3),
+('197104082001121003', 'Wahyu Kurnia Dewanto, S.Kom., M.T.', '08125244969', 0, 1),
 ('197110092003121001', 'Denny Trias Utomo, S.Si., M.T.', '08113625320', NULL, 2),
 ('197111151998021001', 'Adi Heru Utomo, S.Kom., M.Kom.', '085236010820', 0, 1),
 ('197308312008011003', 'Agus Purwadi, S.T., M.T.', '08124914740', 0, 3),
-('197405192003121002', 'Nugroho Setyo Wibowo, S.T.,M.T.', '085236329999', NULL, 2),
+('197405192003121002', 'Nugroho Setyo Wibowo, S.T.,M.T.', '085236329999', 0, 2),
 ('197709292005011003', 'Didit Rahmat Hartadi S.Kom., M.T.', '085234609168', NULL, 1),
 ('197808162005011002', 'Beni Widiawan, S.ST., M.T.', '081336285687', NULL, 3),
 ('197808172003121005', 'Agus Hariyanto, S.T., M.Kom.', '085236986278', NULL, 3),
@@ -126,13 +142,16 @@ INSERT INTO `tmst_dosen` (`nip`, `nama`, `no_hp`, `kuota`, `tmst_prodi_id`) VALU
 ('198608022015042002', 'Ratih Ayuninghemi, S.ST., M.Kom.', '085651152881', NULL, 2),
 ('198807022016101001', 'Husin, S.Kom., M.MT.', '081338338833', NULL, 1),
 ('198903292015031001', 'Taufiq Rizaldi, S.ST.,M.T.', '081332010455', NULL, 1),
-('198907102015091001', 'Ery Setiawan Julev Atmaji, S.Kom.,M.Cs.', '085648807492', NULL, 2),
+('198907102015091001', 'Ery Setiawan Julev Atmaji, S.Kom.,M.Cs.', '085648807492', 0, 2),
 ('199002272018032001', 'Trismayanti Dwi P, S.Kom., M,Cs.', '085859184555', NULL, 2),
 ('199103152017031001', 'Syamsiar Kautsar, S.ST., M.T.', '081217161711', NULL, 3),
 ('199104292017101001', 'Faisal Lutfi Afriansyah, S.Kom., M.T.', '081136205000', NULL, 1),
 ('199112112018031001', 'Khafidurohman A., S.Pd., M.Eng.', '085646418027', NULL, 2),
 ('199203022018032001', 'Zilvanhisna Emka Fitri, S.T., M.T.', '081336959394', NULL, 2),
 ('199205282018032001', 'Bety Etikasari, S.Pd., M.Pd.', '085233975628', NULL, 2),
+('2', 'reviewer', NULL, 6, 3),
+('3', 'aselole', '12345', NULL, 1),
+('5', 'datamaster', NULL, NULL, NULL),
 ('admin', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
@@ -211,7 +230,7 @@ CREATE TABLE `tmst_proposal` (
   `tanggal` date DEFAULT NULL,
   `waktu` time DEFAULT NULL,
   `tempat` varchar(50) DEFAULT NULL,
-  `gambar` varchar(255) DEFAULT NULL,
+  `file` varchar(255) DEFAULT NULL,
   `tmst_mahasiswa_nim` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -225,12 +244,23 @@ DROP TABLE IF EXISTS `tmst_ta`;
 CREATE TABLE `tmst_ta` (
   `id` int(11) NOT NULL,
   `judul` varchar(50) DEFAULT NULL,
-  `deskripsi` varchar(100) DEFAULT NULL,
+  `deskripsi` text,
   `tmst_mahasiswa_nim` varchar(15) DEFAULT NULL,
   `tmst_dosen_nip` varchar(50) DEFAULT NULL,
   `tmst_penelitian_id` int(11) DEFAULT NULL,
-  `kategori` varchar(35) DEFAULT NULL
+  `kategori` varchar(35) DEFAULT NULL,
+  `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tmst_ta`
+--
+
+INSERT INTO `tmst_ta` (`id`, `judul`, `deskripsi`, `tmst_mahasiswa_nim`, `tmst_dosen_nip`, `tmst_penelitian_id`, `kategori`, `status`) VALUES
+(15, 'Sistem Informasi Ta', 'SIM TA', '123', '199002272018032001', NULL, 'Individu', 1),
+(16, 'Sistem Informasi Geografis', 'Merupakan sebuah sistem informasi yang di usulkan untuk dibuat', '123', '197011282003121001', NULL, 'Kelompok', 1),
+(17, 'asd', 'asd', '123', '198012122005011001', NULL, 'Kelompok', 0),
+(18, 'sistem apa', 'ffas', '123', '198012122005011001', 2, 'Individu', 0);
 
 -- --------------------------------------------------------
 
@@ -245,8 +275,16 @@ CREATE TABLE `tmst_ta_final` (
   `deskripsi` varchar(100) DEFAULT NULL,
   `tmst_mahasiswa_nim` varchar(15) NOT NULL,
   `tmst_dosen_nip` varchar(50) NOT NULL,
-  `tmst_penelitian_id` int(11) DEFAULT NULL
+  `tmst_penelitian_id` int(11) DEFAULT NULL,
+  `kategori` varchar(35) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tmst_ta_final`
+--
+
+INSERT INTO `tmst_ta_final` (`id`, `judul`, `deskripsi`, `tmst_mahasiswa_nim`, `tmst_dosen_nip`, `tmst_penelitian_id`, `kategori`) VALUES
+(1, 'Pembibitan Tanaman Pangan', 'wow', '123', '197011282003121001', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -306,7 +344,11 @@ INSERT INTO `tmst_user` (`id`, `password`, `level`, `tmst_mahasiswa_nim`, `tmst_
 (40, '199002272018032001', 3, NULL, '199002272018032001'),
 (41, '197110092003121001', 3, NULL, '197110092003121001'),
 (42, '199203022018032001', 3, NULL, '199203022018032001'),
-(43, 'admin', 5, NULL, 'admin');
+(43, 'admin', 5, NULL, 'admin'),
+(44, '123', 4, '123', NULL),
+(45, '2', 2, NULL, '2'),
+(46, '5', 5, NULL, '5'),
+(47, '3', 3, NULL, '3');
 
 --
 -- Indexes for dumped tables
@@ -403,19 +445,19 @@ ALTER TABLE `tmst_user`
 -- AUTO_INCREMENT for table `td_review`
 --
 ALTER TABLE `td_review`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `td_tanggal`
 --
 ALTER TABLE `td_tanggal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `tmst_bimbingan`
 --
 ALTER TABLE `tmst_bimbingan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tmst_penelitian`
@@ -433,25 +475,25 @@ ALTER TABLE `tmst_prodi`
 -- AUTO_INCREMENT for table `tmst_proposal`
 --
 ALTER TABLE `tmst_proposal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tmst_ta`
 --
 ALTER TABLE `tmst_ta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `tmst_ta_final`
 --
 ALTER TABLE `tmst_ta_final`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tmst_user`
 --
 ALTER TABLE `tmst_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

@@ -40,8 +40,6 @@
 
                 <!-- LOGO -->
                 <div class="topbar-left">
-                    <!--<a href="index.html" class="logo"><span>Code<span>Fox</span></span><i class="mdi mdi-layers"></i></a>-->
-                    <!-- Image logo -->
                     <a class="logo">
                         <span>
                             <img src="<?php echo base_url(); ?>layout/assets/images/logo.png" alt="" height="25">
@@ -67,124 +65,13 @@
 
                         <!-- Right(Notification) -->
                         <ul class="nav navbar-nav navbar-right">
-                            <!-- <li class="hidden-xs">
-                                <form role="search" class="app-search">
-                                    <input type="text" placeholder="Search..."
-                                           class="form-control">
-                                    <a href=""><i class="fa fa-search"></i></a>
-                                </form>
-                            </li> -->
-                            <li>
-                                <a href="#" class="right-menu-item dropdown-toggle" data-toggle="dropdown">
-                                    <i class="dripicons-bell"></i>
-                                    <span class="badge badge-pink">4</span>
-                                </a>
-
-                                <ul class="dropdown-menu dropdown-menu-right dropdown-lg user-list notify-list">
-                                    <li class="list-group notification-list m-b-0">
-                                        <div class="slimscroll">
-                                           <!-- list item-->
-                                           <a href="javascript:void(0);" class="list-group-item">
-                                              <div class="media">
-                                                 <div class="media-left p-r-10">
-                                                    <em class="fa fa-diamond bg-primary"></em>
-                                                 </div>
-                                                 <div class="media-body">
-                                                    <h5 class="media-heading text-primary">A new order has been placed A new order has been placed</h5>
-                                                    <p class="m-0">
-                                                        There are new settings available
-                                                    </p>
-                                                 </div>
-                                              </div>
-                                           </a>
-
-                                           <!-- list item-->
-                                           <a href="javascript:void(0);" class="list-group-item">
-                                              <div class="media">
-                                                 <div class="media-left p-r-10">
-                                                    <em class="fa fa-cog bg-warning"></em>
-                                                 </div>
-                                                 <div class="media-body">
-                                                    <h5 class="media-heading text-warning">New settings</h5>
-                                                    <p class="m-0">
-                                                        There are new settings available
-                                                    </p>
-                                                 </div>
-                                              </div>
-                                           </a>
-
-                                           <!-- list item-->
-                                           <a href="javascript:void(0);" class="list-group-item">
-                                              <div class="media">
-                                                 <div class="media-left p-r-10">
-                                                    <em class="fa fa-bell-o bg-custom"></em>
-                                                 </div>
-                                                 <div class="media-body">
-                                                    <h5 class="media-heading text-custom">Updates</h5>
-                                                    <p class="m-0">
-                                                        There are <span class="text-primary font-600">2</span> new updates available
-                                                    </p>
-                                                 </div>
-                                              </div>
-                                           </a>
-
-                                           <!-- list item-->
-                                           <a href="javascript:void(0);" class="list-group-item">
-                                              <div class="media">
-                                                 <div class="media-left p-r-10">
-                                                    <em class="fa fa-user-plus bg-danger"></em>
-                                                 </div>
-                                                 <div class="media-body">
-                                                    <h5 class="media-heading text-danger">New user registered</h5>
-                                                    <p class="m-0">
-                                                        You have 10 unread messages
-                                                    </p>
-                                                 </div>
-                                              </div>
-                                           </a>
-
-                                            <!-- list item-->
-                                           <a href="javascript:void(0);" class="list-group-item">
-                                              <div class="media">
-                                                 <div class="media-left p-r-10">
-                                                    <em class="fa fa-diamond bg-primary"></em>
-                                                 </div>
-                                                 <div class="media-body">
-                                                    <h5 class="media-heading text-primary">A new order has been placed A new order has been placed</h5>
-                                                    <p class="m-0">
-                                                        There are new settings available
-                                                    </p>
-                                                 </div>
-                                              </div>
-                                           </a>
-
-                                           <!-- list item-->
-                                           <a href="javascript:void(0);" class="list-group-item">
-                                              <div class="media">
-                                                 <div class="media-left p-r-10">
-                                                    <em class="fa fa-cog bg-warning"></em>
-                                                 </div>
-                                                 <div class="media-body">
-                                                    <h5 class="media-heading text-warning">New settings</h5>
-                                                    <p class="m-0">
-                                                        There are new settings available
-                                                    </p>
-                                                 </div>
-                                              </div>
-                                           </a>
-                                       </div>
-                                    </li>
-                                    <!-- end notification list -->
-                                </ul>
-                            </li>
-
                             <li class="dropdown user-box">
                                 <a href="#" class="right-menu-item dropdown-toggle" data-toggle="dropdown">
                                     <i class="dripicons-user"></i>
                                 </a>
 
                                 <ul class="dropdown-menu dropdown-menu-right arrow-dropdown-menu arrow-menu-right user-list notify-list">
-                                    <li style="margin-top: 10px; margin-left: 10px;">Selamat Datang ! <br><?php echo $this->session->userdata('id_session');?>
+                                    <li style="margin-top: 10px; margin-left: 10px;">Selamat Datang ! <br><?php echo $this->session->userdata('name_session');?>
                                   </li>
                                     <li class="divider"></li>
                                     <li><a href="<?php echo base_url('login/logout')?>">Logout</a></li>

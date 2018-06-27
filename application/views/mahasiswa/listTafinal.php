@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="card-box table-responsive">
-                <h2 class="m-t-0 header-title"><b>Daftar Judul Tugas Akhir -(ku)</b></h2>
+                <h2 class="m-t-0 header-title"><b>Daftar Judul Tugas Akhir Final</b></h2>
             <div id="datatable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
 <div class="row">
     <div class="col-sm-12">
@@ -29,17 +29,10 @@
                         <td><?php echo $data->nama ?></td>
                         <td><?php echo $data->kategori ?></td>
                         <td><?php 
-                        if($data->status==0){
                         
-                        echo anchor('mahasiswa/editJudulta/'.$data->id,'Edit','id="btnTest" type="button" class="btn btn-warning btn-bordered waves-effect w-md waves-light" style="margin-bottom:5px;"');
-                        echo anchor('mahasiswa/delJudulta/'.$data->id,'Hapus','id="btnTest" type="button" class="btn btn-danger btn-bordered waves-effect w-md waves-light"');
-                        
-                        }else{
-                        
-                        echo "<button type='button'class='btn btn-warning btn-bordered waves-effect w-md waves-light' style='margin-bottom:5px;' disabled>Edit</button>";
-                        echo "<button type='button'class='btn btn-danger btn-bordered waves-effect w-md waves-light' disabled>Hapus</button>";
-
-                        } ?></td>
+                        echo anchor('mahasiswa/editJudultafinal/'.$data->id,'Edit','id="btnTest" type="button" class="btn btn-warning btn-bordered waves-effect w-md waves-light" style="margin-bottom:5px;"');
+                        echo anchor('mahasiswa/delJudultafinal/'.$data->id,'Hapus','id="btnTest" type="button" class="btn btn-danger btn-bordered waves-effect w-md waves-light"');
+                        ?></td>
                     </tr>
                         <?php }?>
             </tbody>

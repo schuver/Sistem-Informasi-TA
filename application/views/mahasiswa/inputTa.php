@@ -63,8 +63,19 @@
                             <button style="margin-top: 20px;" type="submit" onclick="history-1" class="btn btn-warning waves-effect waves-light">Back</button>
                             </div>
                         </div>
-        <?php }else{ ?>
-            <!-- <h4 class="m-t-0 header-title"><b>Proses Input Usulan Judul Tugas Akhir Masih Belum Diijinkan</b></h4> -->
+        <!-- <?php }else if($limit==2){?>
+
+                <div class="panel panel-color panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Penginputan Belum Diijinkan</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            Jadwal Penginputan Judul Tugas Akhir Belum Ditentukan
+                        </p>
+                    </div>
+                </div> -->
+        <?php }else{?>
                 <div class="panel panel-color panel-info">
                     <div class="panel-heading">
                         <h3 class="panel-title">Penginputan Belum Diijinkan</h3>
